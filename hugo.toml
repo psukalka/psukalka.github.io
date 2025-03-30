@@ -5,3 +5,22 @@ theme = 'ananke'
 [caches]
     [caches.images]
         dir = ':cacheDir/images'
+
+# Navigation Menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Tech"
+    url = "/tech/"
+    weight = 2
+  [[menu.main]]
+    name = "Finance"
+    url = "/finance/"
+    weight = 3
+  [[menu.main]]
+    name = "About Me"
+    url = "/about/"
+    weight = 4

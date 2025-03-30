@@ -2,17 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/free-website/</loc>
+    <loc>http://pvsukalkar.in/about/</loc>
+    <lastmod>2025-03-30T17:00:01+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/</loc>
+    <lastmod>2025-03-30T17:00:01+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/finance/</loc>
+    <lastmod>2025-03-30T16:59:34+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/tech/</loc>
+    <lastmod>2025-03-30T16:58:32+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/posts/free-website/</loc>
     <lastmod>2025-03-30T16:09:56+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>http://pvsukalkar.in/posts/</loc>
     <lastmod>2025-03-30T16:09:56+05:30</lastmod>
   </url><url>
-    <loc>https://example.org/posts/</loc>
-    <lastmod>2025-03-30T16:09:56+05:30</lastmod>
+    <loc>http://pvsukalkar.in/categories/</loc>
   </url><url>
-    <loc>https://example.org/categories/</loc>
-  </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>http://pvsukalkar.in/tags/</loc>
   </url>
 </urlset>
