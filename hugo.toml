@@ -6,6 +6,12 @@ theme = 'ananke'
     [caches.images]
         dir = ':cacheDir/images'
 
+[services.disqus]
+    shortname = 'YOURSHORTNAME'
+
+[params]
+    commenttoEnable = true
+
 # Navigation Menu
 [menu]
   [[menu.main]]
