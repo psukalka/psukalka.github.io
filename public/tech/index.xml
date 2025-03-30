@@ -6,7 +6,21 @@
     <description>Recent content in Tech on Pavan Sukalkar</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sun, 30 Mar 2025 19:34:07 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hosting a Site</title>
+      <link>http://pvsukalkar.in/tech/hosting-a-site/</link>
+      <pubDate>Sun, 30 Mar 2025 19:34:07 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/hosting-a-site/</guid>
+      <description>&lt;h1 id=&#34;hosting-a-website&#34;&gt;Hosting A WebSite&lt;/h1&gt;&#xA;&lt;p&gt;Now that you have purchased a domain, what will it show ? where will your code reside ? where your images / video files be stored ? how will you run scripts to build your code ?&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s go step by step.&#xA;Say I just want to display an &lt;code&gt;index.html&lt;/code&gt; page on my website to host my resume.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;If you have an AWS account, a simplest way is to create a static website in S3. Create a bucket in S3, create an &lt;code&gt;index.html&lt;/code&gt; page in it. Enable &lt;code&gt;static website hosting&lt;/code&gt; for your bucket. Create &lt;code&gt;CNAME&lt;/code&gt; record in your domain to point to this static website and your resume is up.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Buying a Domain</title>
+      <link>http://pvsukalkar.in/tech/buying-a-domain/</link>
+      <pubDate>Sun, 30 Mar 2025 19:22:01 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/buying-a-domain/</guid>
+      <description>&lt;h2 id=&#34;buying-a-domain&#34;&gt;Buying A Domain&lt;/h2&gt;&#xA;&lt;p&gt;Say you want to build a house. Before that you will need to buy a plot (land) where you will build the house.&lt;/p&gt;&#xA;&lt;p&gt;Similarly, if you want to build something that people can see on internet, you will have to buy some space on internet.&#xA;This space is &lt;code&gt;domain&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;To purchase plot, you need to make registration at registrar office and pay stamp duty fees.&lt;/p&gt;&#xA;&lt;p&gt;Similar is the process of buying a domain.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
