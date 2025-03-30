@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://pvsukalkar.in/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Pavan Sukalkar</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Pavan Sukalkar</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Mar 2025 17:00:01 +0530</lastBuildDate>
-    <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Mar 2025 17:09:44 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buy vs Rent</title>
+      <link>http://localhost:1313/finance/buy-vs-rent/</link>
+      <pubDate>Sun, 30 Mar 2025 17:09:44 +0530</pubDate>
+      <guid>http://localhost:1313/finance/buy-vs-rent/</guid>
+      <description>&lt;h2 id=&#34;buy-or-rent-a-flat&#34;&gt;Buy Or Rent A Flat&lt;/h2&gt;&#xA;&lt;p&gt;I have been lucky enough to be born in a state that has two major finance power houses of country. Mumbai and Pune. Rents in these cities are already quite high. A 2bhk costs around Rs. 20,000/- . While in my home town our whole house generates around Rs. 15,000/- rent. The point is, if you have something in a big city you can easily live in small city with its rent but vice versa is not true.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About</title>
-      <link>http://pvsukalkar.in/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 30 Mar 2025 17:00:01 +0530</pubDate>
-      <guid>http://pvsukalkar.in/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Free Website</title>
-      <link>http://pvsukalkar.in/posts/free-website/</link>
+      <link>http://localhost:1313/posts/free-website/</link>
       <pubDate>Sun, 30 Mar 2025 16:09:56 +0530</pubDate>
-      <guid>http://pvsukalkar.in/posts/free-website/</guid>
+      <guid>http://localhost:1313/posts/free-website/</guid>
       <description>&lt;h2 id=&#34;hosting-free-website-with-github-and-hugo&#34;&gt;Hosting Free Website With Github And Hugo&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Create a github repository with your username as &lt;code&gt;psukalka.github.io&lt;/code&gt;. Github only allows one website per username (it can have multiple pages though). So, you need to user your username in the repository.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Clone the repository on local system&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Install hugo on your system&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mark this repository as a hugo website using: &lt;code&gt;hugo new site . --force&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Add some theme. Ex: &lt;code&gt;git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke&lt;/code&gt;&lt;/p&gt;</description>
     </item>
   </channel>
