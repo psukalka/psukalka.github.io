@@ -6,8 +6,15 @@
     <description>Recent content on An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Apr 2025 23:56:07 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 12 Apr 2025 22:46:43 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Whats Cookie-ing</title>
+      <link>http://pvsukalkar.in/tech/whats-cookie-ing/</link>
+      <pubDate>Sat, 12 Apr 2025 22:46:43 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/whats-cookie-ing/</guid>
+      <description>&lt;p&gt;We are trying to improve security of our CDN with cloudfront cookies. Cloudfront provides two approaches: one using signed urls and the other using signed cookies. The later suits better for our media usecase where there are lot of fragmented files.&lt;/p&gt;&#xA;&lt;p&gt;Anyway, I generated a privately signed cookie and sent it in an API response. Then I used this in sending an API request from Postman. And voila it worked. POC was successful.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Itch</title>
       <link>http://pvsukalkar.in/finance/the-itch/</link>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Whats Cookie-ing | An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="We are trying to improve security of our CDN with cloudfront cookies. Cloudfront provides two approaches: one using signed urls and the other using signed cookies. The later suits better for our media usecase where there are lot of fragmented files.
+Anyway, I generated a privately signed cookie and sent it in an API response. Then I used this in sending an API request from Postman. And voila it worked. POC was successful.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/whats-cookie-ing/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/whats-cookie-ing/">
+  <meta property="og:site_name" content="An Observer">
+  <meta property="og:title" content="Whats Cookie-ing">
+  <meta property="og:description" content="We are trying to improve security of our CDN with cloudfront cookies. Cloudfront provides two approaches: one using signed urls and the other using signed cookies. The later suits better for our media usecase where there are lot of fragmented files.
+Anyway, I generated a privately signed cookie and sent it in an API response. Then I used this in sending an API request from Postman. And voila it worked. POC was successful.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-04-12T22:46:43+05:30">
+    <meta property="article:modified_time" content="2025-04-12T22:46:43+05:30">
+
+  <meta itemprop="name" content="Whats Cookie-ing">
+  <meta itemprop="description" content="We are trying to improve security of our CDN with cloudfront cookies. Cloudfront provides two approaches: one using signed urls and the other using signed cookies. The later suits better for our media usecase where there are lot of fragmented files.
+Anyway, I generated a privately signed cookie and sent it in an API response. Then I used this in sending an API request from Postman. And voila it worked. POC was successful.">
+  <meta itemprop="datePublished" content="2025-04-12T22:46:43+05:30">
+  <meta itemprop="dateModified" content="2025-04-12T22:46:43+05:30">
+  <meta itemprop="wordCount" content="313">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Whats Cookie-ing">
+  <meta name="twitter:description" content="We are trying to improve security of our CDN with cloudfront cookies. Cloudfront provides two approaches: one using signed urls and the other using signed cookies. The later suits better for our media usecase where there are lot of fragmented files.
+Anyway, I generated a privately signed cookie and sent it in an API response. Then I used this in sending an API request from Postman. And voila it worked. POC was successful.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Whats Cookie-ing</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-04-12T22:46:43+05:30">April 12, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>We are trying to improve security of our CDN with cloudfront cookies. Cloudfront provides two approaches: one using signed urls and the other using signed cookies. The later suits better for our media usecase where there are lot of fragmented files.</p>
+<p>Anyway, I generated a privately signed cookie and sent it in an API response. Then I used this in sending an API request from Postman. And voila it worked. POC was successful.</p>
+<p>Now, it was time for integrating cookie in web player. FE sent the same cookie as was returned in API response. Surprisingly, web player was getting <code>403 Access Denied</code> error now. Same way worked in postman but not in web.</p>
+<p>First hunch was that CDN was dropping the headers. So, we updated the distribution policy to allow all headers. But that didn&rsquo;t work. Chrome didn&rsquo;t allow to set cookie like this when accessing a third party resource.</p>
+<p>So, we then decided to change the approach. Instead of sending the cookie in an API response, I sent it as a cookie response. Django sent <code>Set-Cookie</code> in response. In cookie, we set the allowed domain to <code>.cloudfront.net</code> as we wanted to access Cloudfront resource. Tested the solution in Postman. It worked.</p>
+<p>It was time for round 2 in Web Player. And it again failed. There was some yellow warning when we were checking the cookie in <code>Application</code> tab in dev tools. It wasn&rsquo;t allowing to set cross site cookies. Meaning I can&rsquo;t set cookie for <code>.cloudfront.net</code> from my <code>.example.com</code> domain.</p>
+<p>Another setback. What to do now ? So, we created another domain name reference <code>media.cdn.example.com</code> (through CNAME record) to access our resources.</p>
+<p>This time, browser allowed to set cookies. And finally we were able to access the CDN resource using cookie from web player.</p>
+<p>This made me realize the various levels of security that browser implements to prevent users from malicious attacks.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
