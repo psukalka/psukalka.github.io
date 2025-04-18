@@ -1,6 +1,6 @@
 baseURL = 'http://pvsukalkar.in/'
 languageCode = 'en-us'
-title = 'An Observer'
+title = 'Experiences Of An Observer'
 theme = 'ananke'
 [caches]
     [caches.images]

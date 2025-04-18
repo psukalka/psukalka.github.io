@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tech on An Observer</title>
+    <title>Tech on Experiences Of An Observer</title>
     <link>http://pvsukalkar.in/tech/</link>
-    <description>Recent content in Tech on An Observer</description>
+    <description>Recent content in Tech on Experiences Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Apr 2025 22:46:43 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 18 Apr 2025 21:02:55 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Overload</title>
+      <link>http://pvsukalkar.in/tech/memory-overload/</link>
+      <pubDate>Fri, 18 Apr 2025 21:02:55 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/memory-overload/</guid>
+      <description>&lt;p&gt;An Issue was reported that videos were not being uploaded from google drive to S3. We have an asynchronous task that transfers files from google drive to S3 (for further processing).&lt;/p&gt;&#xA;&lt;p&gt;My first assumption was that the tasks might have been queued. Also there weren&amp;rsquo;t any sentry alerts, so I ignored the issue. Even after few hours, the issue was not resolved so it seemed something was cooking.&lt;/p&gt;&#xA;&lt;p&gt;I tried to upload a 2MB file from drive and it got processed instantaneously. So, the pipeline was working fine. I looked at the file that they were trying to upload. It was a whopping 8.3GB file. That raised some doubts. Is google drive blocking such file ? Is some network connection getting reset ? Is S3 limiting file upload ?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Whats Cookie-ing</title>
       <link>http://pvsukalkar.in/tech/whats-cookie-ing/</link>
