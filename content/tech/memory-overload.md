@@ -19,6 +19,6 @@ The machine on which task was running had 8GB of RAM and 3GB was already utilize
 
 Sentry alert was not raised as the process was killed by linux due to memory overload. 
 
-To fix the issue, I stored the file locally in temp directory. Uploaded the file to S3 with `multi-part` upload (as recommended for larger files). Finally cleared the temp file after upload. 
+To fix the issue, I stored the file locally in temp directory with `io.FileIO()` instead of `io.BytesIO()`. Uploaded the file to S3 with `multi-part` upload (as recommended for larger files). Finally cleared the temp file after upload. 
 
 Eventually, we could upload 10+GB files without any issue. 

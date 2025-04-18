@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Experiences Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Apr 2025 21:02:55 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 18 Apr 2025 23:11:43 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rustic</title>
+      <link>http://pvsukalkar.in/tech/rust-ic/</link>
+      <pubDate>Fri, 18 Apr 2025 23:11:43 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/rust-ic/</guid>
+      <description>&lt;p&gt;I have been hearing a lot about &lt;code&gt;Rust&lt;/code&gt; lately. How it is fast and achieves near C/C++ performance. So, I was thinking of usecases where I can use it.&lt;/p&gt;&#xA;&lt;p&gt;I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.&lt;/p&gt;&#xA;&lt;p&gt;But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in &lt;code&gt;Rust&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Memory Overload</title>
       <link>http://pvsukalkar.in/tech/memory-overload/</link>

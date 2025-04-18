@@ -55,7 +55,7 @@ My first assumption was that the tasks might have been queued. Also there werenâ
 I tried to upload a 2MB file from drive and it got processed instantaneously. So, the pipeline was working fine. I looked at the file that they were trying to upload. It was a whopping 8.3GB file. That raised some doubts. Is google drive blocking such file ? Is some network connection getting reset ? Is S3 limiting file upload ?">
   <meta itemprop="datePublished" content="2025-04-18T21:02:55+05:30">
   <meta itemprop="dateModified" content="2025-04-18T21:02:55+05:30">
-  <meta itemprop="wordCount" content="297">
+  <meta itemprop="wordCount" content="302">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Memory Overload">
   <meta name="twitter:description" content="An Issue was reported that videos were not being uploaded from google drive to S3. We have an asynchronous task that transfers files from google drive to S3 (for further processing).
@@ -151,7 +151,7 @@ I tried to upload a 2MB file from drive and it got processed instantaneously. So
 <pre tabindex="0"><code>fh = io.BytesIO()
 </code></pre><p>The machine on which task was running had 8GB of RAM and 3GB was already utilized. So, it could only store 5GB of downloaded file and the process got killed when memory was 100% utilized.</p>
 <p>Sentry alert was not raised as the process was killed by linux due to memory overload.</p>
-<p>To fix the issue, I stored the file locally in temp directory. Uploaded the file to S3 with <code>multi-part</code> upload (as recommended for larger files). Finally cleared the temp file after upload.</p>
+<p>To fix the issue, I stored the file locally in temp directory with <code>io.FileIO()</code> instead of <code>io.BytesIO()</code>. Uploaded the file to S3 with <code>multi-part</code> upload (as recommended for larger files). Finally cleared the temp file after upload.</p>
 <p>Eventually, we could upload 10+GB files without any issue.</p>
 <ul class="pa0">
   

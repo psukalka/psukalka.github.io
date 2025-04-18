@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Rustic | Experiences Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I have been hearing a lot about Rust lately. How it is fast and achieves near C/C&#43;&#43; performance. So, I was thinking of usecases where I can use it.
+I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.
+But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in Rust.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/rust-ic/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/rust-ic/">
+  <meta property="og:site_name" content="Experiences Of An Observer">
+  <meta property="og:title" content="Rustic">
+  <meta property="og:description" content="I have been hearing a lot about Rust lately. How it is fast and achieves near C/C&#43;&#43; performance. So, I was thinking of usecases where I can use it.
+I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.
+But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in Rust.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-04-18T23:11:43+05:30">
+    <meta property="article:modified_time" content="2025-04-18T23:11:43+05:30">
+
+  <meta itemprop="name" content="Rustic">
+  <meta itemprop="description" content="I have been hearing a lot about Rust lately. How it is fast and achieves near C/C&#43;&#43; performance. So, I was thinking of usecases where I can use it.
+I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.
+But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in Rust.">
+  <meta itemprop="datePublished" content="2025-04-18T23:11:43+05:30">
+  <meta itemprop="dateModified" content="2025-04-18T23:11:43+05:30">
+  <meta itemprop="wordCount" content="271">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Rustic">
+  <meta name="twitter:description" content="I have been hearing a lot about Rust lately. How it is fast and achieves near C/C&#43;&#43; performance. So, I was thinking of usecases where I can use it.
+I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.
+But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in Rust.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Experiences Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Rustic</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-04-18T23:11:43+05:30">April 18, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I have been hearing a lot about <code>Rust</code> lately. How it is fast and achieves near C/C++ performance. So, I was thinking of usecases where I can use it.</p>
+<p>I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.</p>
+<p>But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in <code>Rust</code>.</p>
+<p>When you build things for production environment, language speed is not the only thing that matters. Community support, frameworks, libraries, availability of developers, maintainability of code, &hellip; all play significant role. So, Python will still exist in our project though performance critical modules can be migrated to some other languages.</p>
+<hr>
+<p>I have also been preparing for interviews with my colleague. I find solving DSA problems quite boring. Spending time on problems that hardly have any real-life implications is boring.</p>
+<p>Then I got the <code>Rust-ic</code> idea to make it interesting. Why not club DSA with Rust ? Whichever problem that I solve will always be in some new language (Rust/ Go). That way I would at least gain by learning new language and DSA will also be done. A win-win situation for me.</p>
+<p>Hence forth, I will solve all DSA problems in some new programming language.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Experiences Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
