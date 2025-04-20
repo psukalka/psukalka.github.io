@@ -1,7 +1,7 @@
 +++
 date = '2025-04-19T20:14:06+05:30'
 draft = false
-title = 'Iron Below the Rust'
+title = 'Iron Beneath the Rust'
 +++
 Having worked on Python for 6+ years, learning Rust took me back to C/C++ days in college. Compile the code before running it. With that it also brought back the nostalgic fear of pointers. Rust put all of the fears to rest. 
 
@@ -19,7 +19,7 @@ Memory is a limited resource. So, it must be managed in some way so that we don'
 - Rust type language: Then comes rust which automatically clears a variable once it goes out of scope. This is done at compile time. When you compile code, compiler adds `drop` statement as per rule at appropriate places. So, you don't incur unpredictability of Garbage collector or the bugs in freeing memory like C/C++. Great. 
 
 The concept seems interesting. But how does Rust achieve this ?
-Rust has the concept of `Ownership`. A value can be `owned` by only single owner at a time. This is the foundation of Rust. The Iron below the Rust. Let's dive into it. 
+Rust has the concept of `Ownership`. A value can be `owned` by only single owner at a time. This is the foundation of Rust. The Iron beneath the Rust. Let's dive into it. 
 
 When we allocate some value to a variable in rust, it creates an owner. 
 ```

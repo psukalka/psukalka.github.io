@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Iron Beneath the Rust | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Having worked on Python for 6&#43; years, learning Rust took me back to C/C&#43;&#43; days in college. Compile the code before running it. With that it also brought back the nostalgic fear of pointers. Rust put all of the fears to rest.
+There are two types of memory: Stack and Heap. As the name suggests on stack memory things will be put one above other and popped in reverse order. Since you know where you are putting things and removing from, stack memory is extremely fast.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/iron-beneath-the-rust/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/iron-beneath-the-rust/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Iron Beneath the Rust">
+  <meta property="og:description" content="Having worked on Python for 6&#43; years, learning Rust took me back to C/C&#43;&#43; days in college. Compile the code before running it. With that it also brought back the nostalgic fear of pointers. Rust put all of the fears to rest.
+There are two types of memory: Stack and Heap. As the name suggests on stack memory things will be put one above other and popped in reverse order. Since you know where you are putting things and removing from, stack memory is extremely fast.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-04-19T20:14:06+05:30">
+    <meta property="article:modified_time" content="2025-04-19T20:14:06+05:30">
+
+  <meta itemprop="name" content="Iron Beneath the Rust">
+  <meta itemprop="description" content="Having worked on Python for 6&#43; years, learning Rust took me back to C/C&#43;&#43; days in college. Compile the code before running it. With that it also brought back the nostalgic fear of pointers. Rust put all of the fears to rest.
+There are two types of memory: Stack and Heap. As the name suggests on stack memory things will be put one above other and popped in reverse order. Since you know where you are putting things and removing from, stack memory is extremely fast.">
+  <meta itemprop="datePublished" content="2025-04-19T20:14:06+05:30">
+  <meta itemprop="dateModified" content="2025-04-19T20:14:06+05:30">
+  <meta itemprop="wordCount" content="912">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Iron Beneath the Rust">
+  <meta name="twitter:description" content="Having worked on Python for 6&#43; years, learning Rust took me back to C/C&#43;&#43; days in college. Compile the code before running it. With that it also brought back the nostalgic fear of pointers. Rust put all of the fears to rest.
+There are two types of memory: Stack and Heap. As the name suggests on stack memory things will be put one above other and popped in reverse order. Since you know where you are putting things and removing from, stack memory is extremely fast.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Iron Beneath the Rust</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-04-19T20:14:06+05:30">April 19, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Having worked on Python for 6+ years, learning Rust took me back to C/C++ days in college. Compile the code before running it. With that it also brought back the nostalgic fear of pointers. Rust put all of the fears to rest.</p>
+<p>There are two types of memory: Stack and Heap. As the name suggests on stack memory things will be put one above other and popped in reverse order. Since you know where you are putting things and removing from, stack memory is extremely fast.</p>
+<p>But with that comes a catch. To push something on stack memory, you must know the size of thing being pushed. We won&rsquo;t be knowing size of all things at compile time, for example the name of user using our app. That would vary person to person. So, we can&rsquo;t allocate this on stack memory. Instead what we do is we allocate it a dynamic Heap memory at runtime and store <code>pointer</code> to that memory in our stack memory.</p>
+<p>Simple. Now, let&rsquo;s take the discussion further.</p>
+<p>Memory is a limited resource. So, it must be managed in some way so that we don&rsquo;t run out of memory. Depending on how the memory is managed languages can be categorized in 3 classes.</p>
+<ul>
+<li>
+<p>C / C++ type languages: These languages give full freedom to user. User can allocate memory and is also responsible for releasing memory when it is not in use. Consider it like a self-service restaurant. You put your plate in basin once you are done eating. There are few problems with this. If you forget to clean memory, it would result in memory leak. If you try to reference a memory location that has been cleaned, it would result in dangling reference. If you try to free an already freed memory that would also be a bug. All in all, with great power comes great responsibility.</p>
+</li>
+<li>
+<p>Java / Python type languages: So, there came other type of languages that have their garbage collection. You allocate memory and forget about deallocating it. Garbage collector will take care of it. This is a periodically running process that deallocates unused memory. Consider it like a restaurant where waiter cleans the plates after you leave. This takes away the headache of freeing memory but introduces garbage collection pauses which are not desirable for performance critical projects. It also needs extra memory overhead to run the collector.</p>
+</li>
+<li>
+<p>Rust type language: Then comes rust which automatically clears a variable once it goes out of scope. This is done at compile time. When you compile code, compiler adds <code>drop</code> statement as per rule at appropriate places. So, you don&rsquo;t incur unpredictability of Garbage collector or the bugs in freeing memory like C/C++. Great.</p>
+</li>
+</ul>
+<p>The concept seems interesting. But how does Rust achieve this ?
+Rust has the concept of <code>Ownership</code>. A value can be <code>owned</code> by only single owner at a time. This is the foundation of Rust. The Iron beneath the Rust. Let&rsquo;s dive into it.</p>
+<p>When we allocate some value to a variable in rust, it creates an owner.</p>
+<pre tabindex="0"><code>{
+    let s1 = String::from(&#34;Hello&#34;);
+    let s2 = s1;
+    println!(&#34;{s1}&#34;); // Will result in compilation error
+}
+</code></pre><p>Here, <code>s1</code> owns the <code>Hello</code> String. It has a <code>pointer</code> to data stored on Heap memory. With second assignment <code>let s2 = s1</code> we are creating a second pointer to the same data. When scope of the variable ends at curly braces <code>}</code> there will be two owners of the data. Meaning that it would try to clean the same memory twice. This would result in error when we try to clean an already cleaned memory. Hence, Rust allows a single ownership of value. So, when we assign <code>let s2 = s1</code> s1 relinquishes its ownership (<code>moves</code> in Rust terms). Hence, when we try to print <code>s1</code> it throws compilation error as <code>s1</code> doesn&rsquo;t own any data. This is quite contrasting to other languages.</p>
+<p>Now suppose, we pass a variable to a function. Who owns the value ? Is it the original variable or is it the function ? With each allocation ownership changes. So, if we pass a variable to a function, it is the function that now owns the value. Consider the following code:</p>
+<pre tabindex="0"><code>fn main(){
+    let s = String::from(&#34;Pavan&#34;);
+    greet_me(s);
+    println!(&#34;{s}&#34;);  // This will throw error
+}
+
+fn greet_me(s: String){
+    println!(&#34;Hello {s}&#34;);
+}
+</code></pre><p>When we pass <code>s</code> to <code>greet_me</code> function, the function takes its ownership. And when the function execution is done its scope completes. So, variable <code>s</code> is dropped. As a result, when we try to access <code>s</code> in <code>main</code> function it gives us compilation error. A simple solution is to return <code>s</code> from <code>greet_me</code> function and reallocate it to <code>s</code>. But this would become cumbersome over time. Hence, Rust has concept of <code>references</code>.</p>
+<p>Instead of passing actual value to the function, we can pass its reference (which is just a pointer). But unlike C++ references, Rust reference guarantees that there won&rsquo;t ever be a dangling pointer (through its single ownership).</p>
+<p>Variables are <code>immutable</code> by default in Rust unless you make them mutable using <code>mut</code> keyword. Similarly, references <code>&amp;</code> are also <code>immutable</code> by default unless you make them mutable with <code>&amp;mut</code>.</p>
+<p>Now if two mutable references try to access the same data, it can lead to data race condition. Hence, Rust restricts multiple <code>mutable</code> references to the same variable though there can be multiple <code>immutable</code> references.</p>
+<p>That&rsquo;s all. If we get these concepts the foundation is set to understand Rust.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
