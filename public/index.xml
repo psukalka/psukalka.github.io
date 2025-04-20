@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Apr 2025 20:14:06 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 20 Apr 2025 21:56:59 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx</title>
+      <link>http://pvsukalkar.in/tech/nginx/</link>
+      <pubDate>Sun, 20 Apr 2025 21:56:59 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/nginx/</guid>
+      <description>&lt;p&gt;Nginx can be used for multiple purposes like web serving, load balancing or reverse proxying. It was designed to solve C10k problem so obviously it can handle large number of connections simultaneously. Besides, it also excels at serving static content. But how does it achieve this ?&lt;/p&gt;&#xA;&lt;p&gt;Nginx follows an asynchronous event-driven architecture. There is a master process that manages all worker processes. Typically there are as many workers as there are CPU cores. Each worker has an event loop running inside it. When an event comes on socket, OS notifies worker. Worker registers interest in the event and moves ahead. When data is received from client, a read event is triggered which is then processed by worker. Thus, the worker continues with its events without being blocked.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Iron Beneath the Rust</title>
       <link>http://pvsukalkar.in/tech/iron-beneath-the-rust/</link>
