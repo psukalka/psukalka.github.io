@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>HAProxy | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="When you go to HAProxy Site, the small case fonts and hardly any effort on UI make you think do they even maintain this site ? Are HAProxy days done ? But if you make effort to read along, you fumble on this line: Most users report having never ever faced any single crash and claim that HAProxy is the most solid part of their infrastructure. Finding machines with HAProxy processes being up for more than 3 years is not exceptional at all! Phew!! Flexing of highest caliber.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/haproxy/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/haproxy/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="HAProxy">
+  <meta property="og:description" content="When you go to HAProxy Site, the small case fonts and hardly any effort on UI make you think do they even maintain this site ? Are HAProxy days done ? But if you make effort to read along, you fumble on this line: Most users report having never ever faced any single crash and claim that HAProxy is the most solid part of their infrastructure. Finding machines with HAProxy processes being up for more than 3 years is not exceptional at all! Phew!! Flexing of highest caliber.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-04-24T23:15:11+05:30">
+    <meta property="article:modified_time" content="2025-04-24T23:15:11+05:30">
+
+  <meta itemprop="name" content="HAProxy">
+  <meta itemprop="description" content="When you go to HAProxy Site, the small case fonts and hardly any effort on UI make you think do they even maintain this site ? Are HAProxy days done ? But if you make effort to read along, you fumble on this line: Most users report having never ever faced any single crash and claim that HAProxy is the most solid part of their infrastructure. Finding machines with HAProxy processes being up for more than 3 years is not exceptional at all! Phew!! Flexing of highest caliber.">
+  <meta itemprop="datePublished" content="2025-04-24T23:15:11+05:30">
+  <meta itemprop="dateModified" content="2025-04-24T23:15:11+05:30">
+  <meta itemprop="wordCount" content="679">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HAProxy">
+  <meta name="twitter:description" content="When you go to HAProxy Site, the small case fonts and hardly any effort on UI make you think do they even maintain this site ? Are HAProxy days done ? But if you make effort to read along, you fumble on this line: Most users report having never ever faced any single crash and claim that HAProxy is the most solid part of their infrastructure. Finding machines with HAProxy processes being up for more than 3 years is not exceptional at all! Phew!! Flexing of highest caliber.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">HAProxy</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-04-24T23:15:11+05:30">April 24, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>When you go to <a href="https://www.haproxy.org/">HAProxy Site</a>, the small case fonts and hardly any effort on UI make you think <code>do they even maintain this site ?</code> Are HAProxy days done ? But if you make effort to read along, you fumble on this line: <em>Most users report having never ever faced any single crash and claim that HAProxy is the most solid part of their infrastructure. Finding machines with HAProxy processes being up for more than 3 years is not exceptional at all!</em> Phew!! Flexing of highest caliber.</p>
+<p>HAProxy is a pure backend product. No fuss, only performance. I read an article stating HAProxy served <a href="https://www.haproxy.com/blog/haproxy-forwards-over-2-million-http-requests-per-second-on-a-single-aws-arm-instance">2M req/sec</a>. But how does HAProxy does what it does ?</p>
+<p>As with Nginx and Caddy, HAProxy also has event-driven architecture that allows it to handle tens of thousands of connections simultaneously with minimal resources. But what separates it out is its single-purpose design. HAProxy acts as pure load-balancer and proxy. It is not a web server. Meaning that it doesn&rsquo;t support file I/O operations for content serving. Its code paths are optimized for proxy operations.</p>
+<p>Due to this single purpose design, it can focus on various depths. For ex. HAProxy has highly optimized memory management. Rather than using general purpose memory allocators like malloc/free it has implemented custom allocators optimized for their use cases. Ex</p>
+<pre tabindex="0"><code>/* Simplified example of a pool allocator concept */
+struct pool {
+    void *free_list;  // List of free blocks
+    void *memory;     // Pre-allocated memory chunk
+    size_t elem_size; // Size of each element
+    int count;        // Number of elements
+};
+</code></pre><p>The above <code>pool</code> allocator benefits by elimintating fragmentation for objecs of same size. Allocation is very fast as it is just a pointer adjustment. It doesn&rsquo;t need to search free lists as in general allocators.</p>
+<p>For group of objects with similar lifetimes it uses <code>arena</code> allocator</p>
+<pre tabindex="0"><code>/* Conceptual arena allocator */
+struct arena {
+    void *current;   // Current allocation point
+    void *end;       // End of the arena memory
+    size_t size;     // Total size
+};
+</code></pre><p>It allows fast allocation by simply incrementing a pointer and freeing entire regions at once rather than individual objects.</p>
+<hr>
+<p>HAProxy uses pool-based approach for buffers. Buffers are pre-allocated fixed size buffers during startup. Used buffers are immediately returned to pool rather than freed. This eliminates overhead of frequent memory allocation/deallocation during request processing. This recycling mechanism is particularly effective because of its workload that involves many short-lived connections.</p>
+<p>Enough of tech-talk. Let&rsquo;s have some hands on with HAProxy.</p>
+<hr>
+<p>Let&rsquo;s simulate 3 servers: server1, server2, server3 running locally on ports 8081, 8082, 8083. They will have <code>index.html</code> file just indicating server number.</p>
+<pre tabindex="0"><code>echo &#34;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Server 1&lt;/h1&gt;&lt;p&gt;This is server 1 responding.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#34; | sudo tee /var/www/server1/index.html
+</code></pre><p>Unlike Nginx/Caddy , HAProxy is not a webserver. Nginx/Caddy could open port 8081 and listen on it for us. But HAProxy can&rsquo;t do that. So, we will have to run python <code>http.server</code> on these ports</p>
+<pre tabindex="0"><code>cd /var/www/server1 &amp;&amp; sudo python3 -m http.server 8081 &amp;
+</code></pre><p>Now that 3 servers are up and running, we can load balance them with HAProxy.</p>
+<pre tabindex="0"><code>frontend http_front
+    bind *:80
+    stats uri /haproxy?stats
+    default_backend web_servers
+
+backend web_servers
+    balance roundrobin
+    server server1 127.0.0.1:8081 check
+    server server2 127.0.0.1:8082 check
+    server server3 127.0.0.1:8083 check
+</code></pre><p>Restart HAProxy with <code>sudo systemctl restart haproxy</code> .
+Let&rsquo;s run a test to check load balancing:</p>
+<pre tabindex="0"><code>for i in {1..10000}; do curl http://localhost:80; echo; done
+</code></pre><p>It will send 10000 curl requests on localhost. We can see the load balancing statistics at <code>http://localhost/haproxy?stats</code></p>
+<p><img src="/images/haproxy_stats.png" alt="HAProxy Stats"></p>
+<hr>
+<p>So, if everything is so green why doesn&rsquo;t everyone just use HAProxy ?
+Well, as I mentioned above, it is a single-purpose product. While Nginx can act as both web server and load balancer, HAProxy acts only as load balancer. For faster deployments, people would use Nginx / Caddy.</p>
+<p>While HAProxy offers very granular control over http request, in most cases people are not concerned over it. So, configuration also adds little overhead compared to Caddy.</p>
+<p>Finally, it is slow to adopt new technologies. Meaning, it still does not support HTTP/3 while Caddy does.
+So, unless performance is of utmost importance, you would prefer Nginx/Caddy over HAProxy.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

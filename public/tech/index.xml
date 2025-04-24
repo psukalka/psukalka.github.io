@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Apr 2025 01:10:18 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 24 Apr 2025 23:15:11 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HAProxy</title>
+      <link>http://pvsukalkar.in/tech/haproxy/</link>
+      <pubDate>Thu, 24 Apr 2025 23:15:11 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/haproxy/</guid>
+      <description>&lt;p&gt;When you go to &lt;a href=&#34;https://www.haproxy.org/&#34;&gt;HAProxy Site&lt;/a&gt;, the small case fonts and hardly any effort on UI make you think &lt;code&gt;do they even maintain this site ?&lt;/code&gt; Are HAProxy days done ? But if you make effort to read along, you fumble on this line: &lt;em&gt;Most users report having never ever faced any single crash and claim that HAProxy is the most solid part of their infrastructure. Finding machines with HAProxy processes being up for more than 3 years is not exceptional at all!&lt;/em&gt; Phew!! Flexing of highest caliber.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Caddy</title>
       <link>http://pvsukalkar.in/tech/caddy/</link>

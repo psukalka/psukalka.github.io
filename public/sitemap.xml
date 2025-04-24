@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://pvsukalkar.in/tech/caddy/</loc>
-    <lastmod>2025-04-23T01:10:18+05:30</lastmod>
-  </url><url>
     <loc>http://pvsukalkar.in/</loc>
+    <lastmod>2025-04-24T23:15:11+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/tech/haproxy/</loc>
+    <lastmod>2025-04-24T23:15:11+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/tech/caddy/</loc>
     <lastmod>2025-04-23T01:10:18+05:30</lastmod>
   </url><url>
     <loc>http://pvsukalkar.in/tech/nginx/</loc>
