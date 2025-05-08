@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Apr 2025 23:15:11 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 08 May 2025 20:32:53 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Video Scrubbing</title>
+      <link>http://pvsukalkar.in/tech/video-scrubbing/</link>
+      <pubDate>Thu, 08 May 2025 20:32:53 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/video-scrubbing/</guid>
+      <description>&lt;p&gt;While watching YouTube video, if you hover over the seek bar you can preview video image of that location.&#xA;You can see images even at 10 min even though only 30 sec of video has buffered yet.&#xA;So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn&amp;rsquo;t it interesting ?&lt;/p&gt;&#xA;&lt;p&gt;This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing.&#xA;When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec).&#xA;So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>HAProxy</title>
       <link>http://pvsukalkar.in/tech/haproxy/</link>

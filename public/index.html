@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-04-24T23:15:11+05:30">
-  <meta itemprop="dateModified" content="2025-04-24T23:15:11+05:30">
+  <meta itemprop="datePublished" content="2025-05-08T20:32:53+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T20:32:53+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -143,6 +143,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/video-scrubbing/" class="color-inherit dim link">
+            Video Scrubbing
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>While watching YouTube video, if you hover over the seek bar you can preview video image of that location.
+You can see images even at 10 min even though only 30 sec of video has buffered yet.
+So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn&rsquo;t it interesting ?</p>
+<p>This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing.
+When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec).
+So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.</p>
+        </div>
+        <a href="/tech/video-scrubbing/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/haproxy/" class="color-inherit dim link">
             HAProxy
             </a>
@@ -181,36 +209,18 @@
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/nginx/" class="color-inherit dim link">
-            Nginx
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Nginx can be used for multiple purposes like web serving, load balancing or reverse proxying. It was designed to solve C10k problem so obviously it can handle large number of connections simultaneously. Besides, it also excels at serving static content. But how does it achieve this ?</p>
-<p>Nginx follows an asynchronous event-driven architecture. There is a master process that manages all worker processes. Typically there are as many workers as there are CPU cores. Each worker has an event loop running inside it. When an event comes on socket, OS notifies worker. Worker registers interest in the event and moves ahead. When data is received from client, a read event is triggered which is then processed by worker. Thus, the worker continues with its events without being blocked.</p>
-        </div>
-        <a href="/tech/nginx/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/nginx/" class="link black dim">
+                Nginx
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/iron-beneath-the-rust/" class="link black dim">
@@ -227,12 +237,6 @@
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/memory-overload/" class="link black dim">
                 Memory Overload
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/whats-cookie-ing/" class="link black dim">
-                Whats Cookie-ing
               </a>
             </h2>
           

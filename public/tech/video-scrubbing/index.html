@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Video Scrubbing | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="While watching YouTube video, if you hover over the seek bar you can preview video image of that location.
+You can see images even at 10 min even though only 30 sec of video has buffered yet.
+So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn&rsquo;t it interesting ?
+This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing.
+When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec).
+So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/video-scrubbing/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/video-scrubbing/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Video Scrubbing">
+  <meta property="og:description" content="While watching YouTube video, if you hover over the seek bar you can preview video image of that location. You can see images even at 10 min even though only 30 sec of video has buffered yet. So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn’t it interesting ?
+This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing. When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec). So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-05-08T20:32:53+05:30">
+    <meta property="article:modified_time" content="2025-05-08T20:32:53+05:30">
+
+  <meta itemprop="name" content="Video Scrubbing">
+  <meta itemprop="description" content="While watching YouTube video, if you hover over the seek bar you can preview video image of that location. You can see images even at 10 min even though only 30 sec of video has buffered yet. So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn’t it interesting ?
+This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing. When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec). So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.">
+  <meta itemprop="datePublished" content="2025-05-08T20:32:53+05:30">
+  <meta itemprop="dateModified" content="2025-05-08T20:32:53+05:30">
+  <meta itemprop="wordCount" content="577">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Video Scrubbing">
+  <meta name="twitter:description" content="While watching YouTube video, if you hover over the seek bar you can preview video image of that location. You can see images even at 10 min even though only 30 sec of video has buffered yet. So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn’t it interesting ?
+This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing. When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec). So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Video Scrubbing</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-05-08T20:32:53+05:30">May 8, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>While watching YouTube video, if you hover over the seek bar you can preview video image of that location.
+You can see images even at 10 min even though only 30 sec of video has buffered yet.
+So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn&rsquo;t it interesting ?</p>
+<p>This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing.
+When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec).
+So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.</p>
+<pre tabindex="0"><code>ffmpeg -i &lt;input_video_path&gt; -vf fps=1/3,scale=160:90 -q:v 3 &lt;output_dir&gt;/thumb-%04d.jpg
+</code></pre><p>This would generate images of 160:90 size from input video at 3 sec interval with quality of 3 in the output directory.
+Output thumbnails will follow thumb-0001.jpg like pattern.</p>
+<p>Loading 200 images would result in 200 requests from client. This would be very inefficient. Plus, the size of images is quite small (few kBs). If we can combine these images in some way, then we can reduce the number of requests from 200 to 1.</p>
+<p>There is a way. We can create a <code>sprite-sheet</code> from these generated images. Sprite sheet is a sheet of small small images. To identify which image is stored at which location a metadata.json should also be created. With this metadata.json the video player can easily display appropriate image when user hovers over some specific duration of video.</p>
+<p>We can use Pillow library to generate sprite-sheet as below:</p>
+<pre tabindex="0"><code>def create_sprite_sheet(
+        thumbnail_paths: List[Path],
+        output_path: Path,
+        columns: int,
+        thumbnail_width: int,
+        thumbnail_height: int,
+        interval_seconds: int
+) -&gt; Tuple[Path, List[Dict]]:
+    &#34;&#34;&#34;
+    Create a sprite sheet from individual thumbnails.
+    
+    Args:
+        thumbnail_paths (List[Path]): List of paths to thumbnail images
+        output_path (Path): Path to save the sprite sheet
+        columns (int): Number of thumbnails per row
+        thumbnail_width (int): Width of each thumbnail in pixels
+        thumbnail_height (int): Height of each thumbnail in pixels
+        interval_seconds (int): Interval between thumbnails in seconds
+    
+    Returns:
+        Tuple[Path, List[Dict]]: Path to the sprite sheet and list of frame metadata
+    &#34;&#34;&#34;
+    try:
+        from PIL import Image
+    except ImportError:
+        raise ImportError(&#34;Pillow is required to create sprite sheets. Install with &#39;pip install Pillow&#39;&#34;)
+
+    print(f&#34;Creating sprite sheet with {len(thumbnail_paths)} thumbnails&#34;)
+
+    # Calculate dimensions
+    rows = math.ceil(len(thumbnail_paths) / columns)
+    sprite_width = columns * thumbnail_width
+    sprite_height = rows * thumbnail_height
+
+    # Create a new image for the sprite sheet
+    sprite_sheet = Image.new(&#39;RGB&#39;, (sprite_width, sprite_height))
+
+    # Prepare metadata for frames
+    frames_metadata = []
+
+    # Add each thumbnail to the sprite sheet
+    for i, thumb_path in enumerate(thumbnail_paths):
+        # Calculate position
+        row = i // columns
+        col = i % columns
+        x = col * thumbnail_width
+        y = row * thumbnail_height
+
+        # Open thumbnail and paste into sprite sheet
+        with Image.open(thumb_path) as thumb:
+            sprite_sheet.paste(thumb, (x, y))
+
+        # Add metadata for this frame
+        frames_metadata.append({
+            &#34;timestamp&#34;: i * interval_seconds,
+            &#34;position&#34;: {
+                &#34;x&#34;: x,
+                &#34;y&#34;: y
+            },
+            &#34;index&#34;: i
+        })
+
+    # Save sprite sheet
+    sprite_sheet.save(output_path, quality=85, optimize=True)
+    print(f&#34;Sprite sheet created at {output_path}&#34;)
+
+    return output_path, frames_metadata
+</code></pre><p>Sample sprite sheet image:
+<img src="/images/sprite_sheet.jpg" alt="Sprite Sheet"></p>
+<p>The json file looks like:</p>
+<pre tabindex="0"><code>  &#34;frames&#34;: [
+    {
+      &#34;timestamp&#34;: 0,
+      &#34;position&#34;: {
+        &#34;x&#34;: 0,
+        &#34;y&#34;: 0
+      },
+      &#34;index&#34;: 0
+    },
+    {
+      &#34;timestamp&#34;: 3,
+      &#34;position&#34;: {
+        &#34;x&#34;: 160,
+        &#34;y&#34;: 0
+      },
+      &#34;index&#34;: 1
+    },
+    ...
+  ]
+</code></pre><p>Once sprite-sheet and json metadata is created video player can use them to display appropriate images on hovering over seek bar. This is how video scrubbing works.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
