@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 May 2025 20:32:53 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 09 May 2025 19:51:31 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector Graphics</title>
+      <link>http://pvsukalkar.in/tech/vector-graphics/</link>
+      <pubDate>Fri, 09 May 2025 19:51:31 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/vector-graphics/</guid>
+      <description>&lt;p&gt;If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn&amp;rsquo;t seem to break. I observed similar thing with Figma.&lt;/p&gt;&#xA;&lt;p&gt;What is the magic here ? Why doesn&amp;rsquo;t it break ? Let&amp;rsquo;s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Video Scrubbing</title>
       <link>http://pvsukalkar.in/tech/video-scrubbing/</link>

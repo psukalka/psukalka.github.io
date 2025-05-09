@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Vector Graphics | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn&rsquo;t seem to break. I observed similar thing with Figma.
+What is the magic here ? Why doesn&rsquo;t it break ? Let&rsquo;s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/vector-graphics/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/vector-graphics/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Vector Graphics">
+  <meta property="og:description" content="If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn’t seem to break. I observed similar thing with Figma.
+What is the magic here ? Why doesn’t it break ? Let’s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-05-09T19:51:31+05:30">
+    <meta property="article:modified_time" content="2025-05-09T19:51:31+05:30">
+
+  <meta itemprop="name" content="Vector Graphics">
+  <meta itemprop="description" content="If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn’t seem to break. I observed similar thing with Figma.
+What is the magic here ? Why doesn’t it break ? Let’s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.">
+  <meta itemprop="datePublished" content="2025-05-09T19:51:31+05:30">
+  <meta itemprop="dateModified" content="2025-05-09T19:51:31+05:30">
+  <meta itemprop="wordCount" content="735">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vector Graphics">
+  <meta name="twitter:description" content="If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn’t seem to break. I observed similar thing with Figma.
+What is the magic here ? Why doesn’t it break ? Let’s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Vector Graphics</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-05-09T19:51:31+05:30">May 9, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn&rsquo;t seem to break. I observed similar thing with Figma.</p>
+<p>What is the magic here ? Why doesn&rsquo;t it break ? Let&rsquo;s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.</p>
+<p>A simple solution can be to generate a highly detailed image and then share it.
+But there is a problem with this. With detailing, size of image increases. With size, loading time will also increase.
+But that doesn&rsquo;t seem to be the case when you load a map. On the contrary, when you zoom it seems to load more details.
+So, does it send low resolution time at first and then send other images afterward ?
+But how would it exactly fit the new image inside the previous zoomed image ?
+Also, road conditions can keep varying for each person, so does it keep generating billions of images every second ?
+That doesn&rsquo;t seem like a scalable solution.</p>
+<p>Well, if you notice there is something peculiar about maps or engineering designs. They involve mostly geometric shapes. Lines, circles, curves, polygons, &hellip; And since these are geometric shapes, we can represent them concisely with mathematical formulas.
+So, instead of having a <code>1000x1000</code> pixel circle having color in each pixel, we can represent it simply with a center, radius and color to fill. Thus, a 4MB <code>jpg</code> circle can be stored in 1kB <code>svg</code> file.
+Only catch is the client should know how to draw image using the mathematical formula. WebGL is used in browsers to render vector graphics.</p>
+<p>This is <code>Vector graphics</code>. Instead of storing what each pixel should show, the data is encapsulated in mathematical shapes that client can understand. So, despite of how much you zoom, image will never break. On the contrary, when you zoom in, the client (mobile phone OS) draws only that portion of design. A vector graphic image does not break even at infinite zoom.</p>
+<p>The way of storing data in each pixel is called <code>Raster Graphics</code>. This is the most common way of storing images like jpg, png, &hellip; Vector graphic images are stored as .svg (Scalable Vector Graphics) files.</p>
+<p>Filters, shapes, animations can be easily represented with vector graphics using minimal memory.
+Another issue with raster graphics is that they are not editing friendly. You never edit only one pixel, you would redraw some shape or give some new color to certain group of pixels. This can never be precise. So, with multiple editing there is loss of quality.
+On the contrary, vector graphics are very editing friendly. Each design is a group of elements. You can remove or edit any element precisely.</p>
+<p>Well, if everything is so hunky-dory with vector graphics then why don&rsquo;t we use it for everything ? Why use raster grahics at all ?</p>
+<p>As discussed above, vector graphics need mathematical formulas. So, only geometric shapes can be precisely drawn with it. If you try to draw a photo with svg, its size will increase rather than decreasing.</p>
+<p>Also, how much memory will a svg take isn&rsquo;t known beforehand. An (uncompressed) 4MB jpg image will take around that much memory but a kB of svg can take MBs of memory at run time depending on complexity of elements used. Ex. rendering filters (like gaussian blur) at runtime take more memory (in MBs).</p>
+<p>An interesting case is of <a href="https://en.wikipedia.org/wiki/Billion_laughs_attack">Billion Laughs</a> where a few kB image can explode to GBs of memory usage.</p>
+<p>A sample SVG can look like:</p>
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;svg width=&#34;150&#34; height=&#34;150&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
+    &lt;rect width=&#34;100%&#34; height=&#34;100%&#34; fill=&#34;green&#34; /&gt;
+    &lt;circle cx=&#34;75&#34; cy=&#34;75&#34; r=&#34;40&#34; fill=&#34;yellow&#34; /&gt;
+    &lt;text x=&#34;75&#34; y=&#34;75&#34; font-size=&#34;30&#34; text-anchor=&#34;middle&#34; fill=&#34;red&#34;&gt;PAVAN&lt;/text&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>It is just xml rather than pixel data.</p>
+<p>Engineering designing softwares like AutoCAD, Figma, Adobe Illustrator, &hellip; that need precise geometric shapes and multiple editing rely on vector graphics. Same is the case with google maps where roads and houses are shapes with traffic being indicated by fill color.</p>
+<p>So, vector graphics is not an alternative to raster graphics. It is complimentary. The cases which have geometric patterns, animations can be compressed and displayed with higher precision using vector graphics.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
