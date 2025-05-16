@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-05-16T00:59:07+05:30">
-  <meta itemprop="dateModified" content="2025-05-16T00:59:07+05:30">
+  <meta itemprop="datePublished" content="2025-05-16T22:38:25+05:30">
+  <meta itemprop="dateModified" content="2025-05-16T22:38:25+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -143,6 +143,32 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/the-swiss-knife/" class="color-inherit dim link">
+            The Swiss Army Knife
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>FFmpeg is called the Swiss Army Knife for video and audio. Whatever you want to do with media like compressing, scaling, editing, encoding, decoding, transcoding, streaming, &hellip; FFmpeg can do everything. If it&rsquo;s so special, let&rsquo;s start using it. You can install <a href="https://ffmpeg.bufferhead.com/">FFmpeg</a> on your system.</p>
+<p>Let&rsquo;s download some video <code>video_1.mp4</code> . I want to get details about this video. I can do so using:</p>
+<pre tabindex="0"><code>ffprobe -v quiet -print_format json -show_format -show_streams video_1.mp4
+</code></pre><p>Here we used <code>ffprobe</code> (that usually comes with ffmpeg).</p>
+        </div>
+        <a href="/tech/the-swiss-knife/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/drm/" class="color-inherit dim link">
             DRM
             </a>
@@ -185,40 +211,18 @@ If someone is playing a movie on TV and then recording it again through high qua
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/video-scrubbing/" class="color-inherit dim link">
-            Video Scrubbing
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>While watching YouTube video, if you hover over the seek bar you can preview video image of that location.
-You can see images even at 10 min even though only 30 sec of video has buffered yet.
-So, if the video has not loaded till 10 min, how is the video player able to display image at that location ? Isn&rsquo;t it interesting ?</p>
-<p>This happens with a feature called video scrubbing. We need to process the uploaded video for video scrubbing.
-When a video is uploaded (say of 10 min), we can take snapshots at regular intervals (of say 3sec).
-So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate these snapshots using ffmpeg.</p>
-        </div>
-        <a href="/tech/video-scrubbing/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/video-scrubbing/" class="link black dim">
+                Video Scrubbing
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/haproxy/" class="link black dim">
@@ -235,12 +239,6 @@ So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate th
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/nginx/" class="link black dim">
                 Nginx
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/iron-beneath-the-rust/" class="link black dim">
-                Iron Beneath the Rust
               </a>
             </h2>
           

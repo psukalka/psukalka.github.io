@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 May 2025 00:59:07 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2025 22:38:25 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Swiss Army Knife</title>
+      <link>http://pvsukalkar.in/tech/the-swiss-knife/</link>
+      <pubDate>Fri, 16 May 2025 22:38:25 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/the-swiss-knife/</guid>
+      <description>&lt;p&gt;FFmpeg is called the Swiss Army Knife for video and audio. Whatever you want to do with media like compressing, scaling, editing, encoding, decoding, transcoding, streaming, &amp;hellip; FFmpeg can do everything. If it&amp;rsquo;s so special, let&amp;rsquo;s start using it. You can install &lt;a href=&#34;https://ffmpeg.bufferhead.com/&#34;&gt;FFmpeg&lt;/a&gt; on your system.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s download some video &lt;code&gt;video_1.mp4&lt;/code&gt; . I want to get details about this video. I can do so using:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ffprobe -v quiet -print_format json -show_format -show_streams video_1.mp4&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Here we used &lt;code&gt;ffprobe&lt;/code&gt; (that usually comes with ffmpeg).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>DRM</title>
       <link>http://pvsukalkar.in/tech/drm/</link>
