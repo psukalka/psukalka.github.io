@@ -1,9 +1,8 @@
 +++
 date = '2025-03-30T19:34:07+05:30'
 draft = false
-title = 'Hosting a Site'
+title = 'Hosting a Website'
 +++
-# Hosting A WebSite
 
 Now that you have purchased a domain, what will it show ? where will your code reside ? where your images / video files be stored ? how will you run scripts to build your code ? 
 

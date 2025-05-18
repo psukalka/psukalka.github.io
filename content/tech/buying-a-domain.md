@@ -3,9 +3,6 @@ date = '2025-03-30T19:22:01+05:30'
 draft = false
 title = 'Buying a Domain'
 +++
-
-## Buying A Domain
-
 Say you want to build a house. Before that you will need to buy a plot (land) where you will build the house. 
 
 Similarly, if you want to build something that people can see on internet, you will have to buy some space on internet.

@@ -3,7 +3,6 @@ date = '2025-04-07T23:56:07+05:30'
 draft = false
 title = 'The Itch'
 +++
-# The Itch
 Few Years ago, I used to invest in Share Market. Every morning, I used to open the app around 9am and start tracking the movements. I used to save Rs 10-12k to invest in market for that month. Depending on how the market is moving, I would buy few shares. When I bought some share and at end of day I earned even few rupees profit, it would make me happy. It was an achievement. Throughout the day I would fidget around the trading app checking if there has been any positive movement. 
 
 Few years later, I started investing my money through RD and SIP. The amount used to get deducted from my bank account at scheduled time. Money automatically would be invested. It was a steady growth and actually I used to feel calm throughout the day. No fidgeting around any app as there is no daily movement. 
