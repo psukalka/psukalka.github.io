@@ -1,0 +1,104 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Container Box -->
+  <rect x="50" y="50" width="700" height="400" rx="20" ry="20" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+  <text x="400" y="90" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">MP4 Container</text>
+
+  <!-- Header Box -->
+  <rect x="80" y="110" width="640" height="60" rx="10" ry="10" fill="#e0e8ff" stroke="#333" stroke-width="2"/>
+  <text x="400" y="145" font-family="Arial" font-size="18" text-anchor="middle">Container Metadata (ftyp, moov)</text>
+  <text x="400" y="165" font-family="Arial" font-size="14" text-anchor="middle" fill="#555">File Type, Duration, Creation Date, Timescale</text>
+
+  <!-- Video Stream -->
+  <rect x="80" y="190" width="640" height="70" rx="10" ry="10" fill="#ffece0" stroke="#333" stroke-width="2"/>
+  <rect x="90" y="200" width="50" height="50" rx="5" ry="5" fill="#ff7f50"/>
+  <text x="115" y="230" font-family="Arial" font-size="14" text-anchor="middle" fill="white">V</text>
+  <text x="160" y="220" font-family="Arial" font-size="18" font-weight="bold">Video Stream (trak)</text>
+  <text x="160" y="240" font-family="Arial" font-size="14" fill="#555">H.264/HEVC Encoded Video Frames</text>
+  
+  <!-- Video Frame Examples -->
+  <rect x="420" y="200" width="290" height="50" rx="5" ry="5" fill="#fff" stroke="#ff7f50" stroke-width="2"/>
+  <rect x="430" y="210" width="30" height="30" rx="3" ry="3" fill="#ff7f50" stroke="#333"/>
+  <text x="445" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">I</text>
+  <rect x="470" y="210" width="30" height="30" rx="3" ry="3" fill="#ff9f80" stroke="#333"/>
+  <text x="485" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">P</text>
+  <rect x="510" y="210" width="30" height="30" rx="3" ry="3" fill="#ffbfaf" stroke="#333"/>
+  <text x="525" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">B</text>
+  <rect x="550" y="210" width="30" height="30" rx="3" ry="3" fill="#ffbfaf" stroke="#333"/>
+  <text x="565" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">B</text>
+  <rect x="590" y="210" width="30" height="30" rx="3" ry="3" fill="#ff9f80" stroke="#333"/>
+  <text x="605" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">P</text>
+  <rect x="630" y="210" width="30" height="30" rx="3" ry="3" fill="#ffbfaf" stroke="#333"/>
+  <text x="645" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">B</text>
+  <rect x="670" y="210" width="30" height="30" rx="3" ry="3" fill="#ffbfaf" stroke="#333"/>
+  <text x="685" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="white">B</text>
+
+  <!-- Audio Stream -->
+  <rect x="80" y="280" width="640" height="70" rx="10" ry="10" fill="#e0ffe0" stroke="#333" stroke-width="2"/>
+  <rect x="90" y="290" width="50" height="50" rx="5" ry="5" fill="#50c878"/>
+  <text x="115" y="320" font-family="Arial" font-size="14" text-anchor="middle" fill="white">A</text>
+  <text x="160" y="310" font-family="Arial" font-size="18" font-weight="bold">Audio Stream (trak)</text>
+  <text x="160" y="330" font-family="Arial" font-size="14" fill="#555">AAC/MP3 Encoded Audio Samples</text>
+  
+  <!-- Audio Sample Examples -->
+  <rect x="420" y="290" width="290" height="50" rx="5" ry="5" fill="#fff" stroke="#50c878" stroke-width="2"/>
+  <rect x="430" y="300" width="270" height="30" rx="3" ry="3" fill="#fff" stroke="#50c878"/>
+  <!-- Audio waveform -->
+  <path d="M 430,315 Q 440,305 450,315 Q 460,325 470,315 Q 480,305 490,315 Q 500,325 510,315 Q 520,305 530,315 Q 540,325 550,315 Q 560,305 570,315 Q 580,325 590,315 Q 600,305 610,315 Q 620,325 630,315 Q 640,305 650,315 Q 660,325 670,315 Q 680,305 690,315 L 700,315" fill="none" stroke="#50c878" stroke-width="2"/>
+
+  <!-- Subtitle Stream -->
+  <rect x="80" y="370" width="640" height="60" rx="10" ry="10" fill="#e0e0ff" stroke="#333" stroke-width="2"/>
+  <rect x="90" y="380" width="50" height="40" rx="5" ry="5" fill="#8080ff"/>
+  <text x="115" y="405" font-family="Arial" font-size="14" text-anchor="middle" fill="white">S</text>
+  <text x="160" y="400" font-family="Arial" font-size="18" font-weight="bold">Subtitle Stream (trak)</text>
+  <text x="160" y="420" font-family="Arial" font-size="14" fill="#555">Text, Timing Information</text>
+  
+  <!-- Subtitle Example -->
+  <rect x="420" y="380" width="290" height="40" rx="5" ry="5" fill="#fff" stroke="#8080ff" stroke-width="2"/>
+  <text x="565" y="405" font-family="Arial" font-size="12" text-anchor="middle">"Hello, how are you today?"</text>
+
+  <!-- Legend -->
+  <rect x="620" y="120" width="100" height="16" rx="3" ry="3" fill="#ff7f50"/>
+  <text x="670" y="133" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Video</text>
+  <rect x="620" y="145" width="100" height="16" rx="3" ry="3" fill="#50c878"/>
+  <text x="670" y="158" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Audio</text>
+  <rect x="620" y="170" width="100" height="16" rx="3" ry="3" fill="#8080ff"/>
+  <text x="670" y="183" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Subtitles</text>
+
+  <!-- Interleaved Data Visualization -->
+  <path d="M 50,450 L 750,450" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="400" y="470" font-family="Arial" font-size="12" text-anchor="middle">Interleaved Data Storage (mdat box)</text>
+  
+  <rect x="60" y="440" width="25" height="20" rx="3" ry="3" fill="#ff7f50"/>
+  <rect x="90" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="110" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="130" y="440" width="15" height="20" rx="3" ry="3" fill="#ff9f80"/>
+  <rect x="150" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="170" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="190" y="440" width="25" height="20" rx="3" ry="3" fill="#8080ff"/>
+  <rect x="220" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="240" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="260" y="440" width="15" height="20" rx="3" ry="3" fill="#ff9f80"/>
+  <!-- Continue pattern -->
+  <rect x="280" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="300" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="320" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="340" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="360" y="440" width="25" height="20" rx="3" ry="3" fill="#ff7f50"/>
+  <rect x="390" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="410" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="430" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="450" y="440" width="25" height="20" rx="3" ry="3" fill="#8080ff"/>
+  <rect x="480" y="440" width="15" height="20" rx="3" ry="3" fill="#ff9f80"/>
+  <rect x="500" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="520" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="540" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="560" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="580" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="600" y="440" width="15" height="20" rx="3" ry="3" fill="#ff9f80"/>
+  <rect x="620" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="640" y="440" width="15" height="20" rx="3" ry="3" fill="#ffbfaf"/>
+  <rect x="660" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="680" y="440" width="25" height="20" rx="3" ry="3" fill="#ff9f80"/>
+  <rect x="710" y="440" width="15" height="20" rx="3" ry="3" fill="#50c878"/>
+  <rect x="730" y="440" width="10" height="20" rx="3" ry="3" fill="#50c878"/>
+</svg>
