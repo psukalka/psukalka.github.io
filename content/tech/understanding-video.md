@@ -28,15 +28,50 @@ Now, suppose I want to compress a video. What is the maximum compression that I 
 
 *As you can guess, if we want more compressed video (for low network latency), we should increase GOP-size to like 120. And if we want high quality video we should choose low GOP-size like 60.*
 
+Say, I want to set gop size of 120 for a video. We can use following command to set `gop` size of a video. 
+```
+ffmpeg -i video.mp4 -c:v libx264 -g 120 -c:a copy output_gop.mp4
+```
+
 ---
 Cool, what else can we do ? A video stream is collection of frames. A 30fps video has 30 frames in one second. What if I reduce framerate, i.e. number of frames in 1 sec. Say I change framerate from 30fps to 24fps what will happen ? *We have reduced size of video roughly by 20%*. But what impact does it have on video quality ? It depends on content in the video. If it is a standard video, framerate change will not be noticeable. For slow paced content like news reporting we can even lower the framerate. But for a fast motion / action / sports video the change might be noticeable. But if your end-client is already in low network area, reducing framerate can be an option (because playing video is important than not playing at all). 
 
+To change framerate of a video, we can use following command: 
+```
+ffmpeg -i video.mp4 -c:v libx264 -r 24 -preset medium -crf 18 -c:a copy output_24fps.mp4
+```
+---
+
 Next, what if we reduce bitrate of video ? Instead of 10Mbps we restrict it max to 1Mbps. Codec algorithms will internally try to optimize frame types (I/P/B). Pixel values were be approximated and stored using lesser number of bits. Ex instead of storing color between 0-255, it can store it using 0-63. For smaller device (like mobile phones) such change won't be that noticeable. 
 
+We can update bitrate of a video as follows:
+```
+ffmpeg -i video.mp4 -c:v libx264 -b:v 1M -c:a copy output_1mbps.mp4
+```
+
+---
 Then, what if we play with resolution of video ? Say, original video is of 1080x1920 resolution and we change its resolution to 540x960 ? Here, we have kept the aspect ratio same. But the number of pixels have reduced by to 1/4th i.e. 75% reduction. Size will be drastically lesser. But what will be impact on quality ? On most mobile devices, the change will be imperceptible but edges or details will start getting softer. 
 
-But can we do anything to preserve quality of video while lowering its size ? Yes. A video can contain scenes of various complexity. Some scenes will be simple like people talking, slow moving scenes, nature scene, ... Some scenes can be complex like an action sequence. If we use same number of bits to represent both simple and complex scenes, we would waste bits on simple scenes and complex scene will be of lower quality. If we are catering to a video that will be compressed once and watched 1000s of times later we can think of using multi-pass compression. In first pass, it codec will just iterate over video and create a log file analyzing locations of simple and complex scenes. In second pass, it will use this log file to allocate lesser bits (say 600kb) for simple scene and more bits (say 1400kb) for complex scene. Thus, overall average bitrate hasn't changed but perceivable quality is better. Multi-pass algorithm takes more time to process as it iterates multiple time, but it will produce better quality outputs at lesser size. 
+To change resolution of a video, we can use following command:
+```
+ffmpeg -i video.mp4 -vf "scale=960:540" -c:v libx264 -crf 18 -preset medium -c:a copy output_res.mp4
+```
+Most things are self-explanatory in above command. `crf` means Constant Rate Factor. Its value 18 is called quantization factor. Lower quantization factor means higher quality as more details are preserved. Value till 20 is perceived lossless to visual perception.
 
+---
+Cool. But can we do anything to preserve quality of video while lowering its size ? Yes. A video can contain scenes of various complexity. Some scenes will be simple like people talking, slow moving scenes, nature scene, ... Some scenes can be complex like an action sequence. If we use same number of bits to represent both simple and complex scenes, we would waste bits on simple scenes and complex scene will be of lower quality. If we are catering to a video that will be compressed once and watched 1000s of times later we can think of using multi-pass compression. In first pass, it codec will just iterate over video and create a log file analyzing locations of simple and complex scenes. In second pass, it will use this log file to allocate lesser bits (say 600kb) for simple scene and more bits (say 1400kb) for complex scene. Thus, overall average bitrate hasn't changed but perceivable quality is better. Multi-pass algorithm takes more time to process as it iterates multiple time, but it will produce better quality outputs at lesser size. 
+
+To run multi-pass encoding we can use following command:
+```
+ffmpeg -i video.mp4 -c:v libx264 -b:v 1M -pass 1 -an -f null /dev/null
+ffmpeg -i video.mp4 -c:v libx264 -b:v 1M -pass 2 -c:a copy output_multi.mp4
+```
+---
 Last but quite important, using newer codecs (like H265 instead of H264) can have better impacts. H264 uses macroblocks of 16x16 pixels while H265 uses coding tree units (CTU) of upto 64x64 pixels which is more efficient for larger areas with similar content. H264 has 9 intra-prediction modes while H265 has 35 intra-predition models thus giving precise directional prediction. H265 also utilizes parallel processing for better core-utilization. Newer codec will obviously have better impact, just need to check that the endpoints support decoding them. 
 
+To change codec from H264 to H265 we can use following command:
+```
+ffmpeg -i video.mp4 -c:v libx265 -crf 25 -c:a aac -b:a 128k output_h265.mp4
+```
+---
 Thus, by understanding a video and using simple logical reasoning we can achieve desirable compression levels.
