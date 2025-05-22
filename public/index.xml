@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 May 2025 00:56:39 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 22 May 2025 21:43:16 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Conundrum: Sync Or Async</title>
+      <link>http://pvsukalkar.in/tech/the-conundrum/</link>
+      <pubDate>Thu, 22 May 2025 21:43:16 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/the-conundrum/</guid>
+      <description>&lt;p&gt;Suppose I migrate my code from being synchronous to asynchronous what does change ? Let&amp;rsquo;s try to think through.&lt;/p&gt;&#xA;&lt;p&gt;Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Understanding Video</title>
       <link>http://pvsukalkar.in/tech/understanding-video/</link>

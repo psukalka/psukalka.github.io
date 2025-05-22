@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>The Conundrum: Sync Or Async | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Suppose I migrate my code from being synchronous to asynchronous what does change ? Let&rsquo;s try to think through.
+Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/the-conundrum/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/the-conundrum/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="The Conundrum: Sync Or Async">
+  <meta property="og:description" content="Suppose I migrate my code from being synchronous to asynchronous what does change ? Let’s try to think through.
+Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-05-22T21:43:16+05:30">
+    <meta property="article:modified_time" content="2025-05-22T21:43:16+05:30">
+
+  <meta itemprop="name" content="The Conundrum: Sync Or Async">
+  <meta itemprop="description" content="Suppose I migrate my code from being synchronous to asynchronous what does change ? Let’s try to think through.
+Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.">
+  <meta itemprop="datePublished" content="2025-05-22T21:43:16+05:30">
+  <meta itemprop="dateModified" content="2025-05-22T21:43:16+05:30">
+  <meta itemprop="wordCount" content="740">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Conundrum: Sync Or Async">
+  <meta name="twitter:description" content="Suppose I migrate my code from being synchronous to asynchronous what does change ? Let’s try to think through.
+Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">The Conundrum: Sync Or Async</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-05-22T21:43:16+05:30">May 22, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Suppose I migrate my code from being synchronous to asynchronous what does change ? Let&rsquo;s try to think through.</p>
+<p>Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.</p>
+<p>Now there are few important things to consider.</p>
+<p>What happens to the function that was paused ? Does it remain in the memory to be processed again (once the event completes) or is it removed from memory ? If it remains in memory, will this not result in more memory consumption as there will be lot of pending events to be processed and they will be held in memory. And suppose it is removed from memory how does it <code>resume</code> from the same location ? A function can&rsquo;t be invoked from in-between, right ? To complicate it, let&rsquo;s say a function had multiple <code>await</code>s then how would it know from which await to resume ?</p>
+<p>As you might know, the paused (or suspended) function (execution context to be precise) is held in memory. That&rsquo;s how it is able to resume quickly. Another important thing to note here is if there are long waiting concurrent tasks they can really clog memory. Or if there are functions that hold large data near await boundary they can also lead to memory issues quickly.</p>
+<hr>
+<p>NodeJs is non-blocking by default. So, if you make a network call it would automatically be pushed to event-loop and function execution would continue without getting blocked. Python, on the contrary is sync by default. So, if you make a network call it will be blocked there unless you explicitly use async libraries to make the network call. Ok, suppose you make a (network) db call to fetch some data. Your next code will obviously be dependent on this data so you made the call. So, you will have to <code>await</code> on this call. Python has a restriction that <code>await</code> can be called only inside a coroutine. So, the function where db call is being made should be made coroutine with <code>async</code> keyword. Now, where this function is being called that should also <code>await</code>. So, that function would also need to be coroutine. And the chain continues. Thus, the async-chain quickly escalates till source. All the way from source till last call it would become async. It is also fair. How would the interpreter know whether something is to be executed in event loops ? Also, the flagging with <code>async</code> keyword informs about non-blocking nature of function and reduces chances of unknowingly adding blocking functions inside it.</p>
+<hr>
+<p>Let&rsquo;s take another scenario. Suppose an API was making 100 DB calls. In synchronous mode, all these calls would go one after the other. If we make the code asynchronous, it would make these 100 DB calls and sit for their responses. I guess DBs handle such things efficiently with connection pools. The point is what would have been a distributed load over a second would become a spike in few milliseconds. Systems should be robust to handle such cases in production.</p>
+<hr>
+<p>Suppose that you made a db call. It takes 10ms to process that call. Till the call is processed few more (say 100) ready events are added to event loop. Now, even if your data is received it will be processed after events in line are clear. Thus, even though the overall throughput of the system increased, it can happen that P99 response time has increased. If event loop has some priority management mechanism (like in WebFlux) then it can be controlled.</p>
+<hr>
+<p>Also, can it happen that events are lost ? Say, event handler throws an uncaught exception, the process will be terminated and all pending events might be lost. Such cases can obviously happen even in synchronous flow but the point is with increased concurrency the impact of such events can be larger if not handled properly.</p>
+<hr>
+<p>In the end, with the evolving tools the complexity and unpredictability of async code is reducing. In the bid to get that extra performance out of your application it would no longer be a conundrum. Async would be an obvious winner.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

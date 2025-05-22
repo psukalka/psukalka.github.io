@@ -127,6 +127,25 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/the-conundrum/" class="link black dim">
+        The Conundrum: Sync Or Async
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Suppose I migrate my code from being synchronous to asynchronous what does change ? Let&rsquo;s try to think through.</p>
+<p>Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.</p>
+    </div>
+    <a href="/tech/the-conundrum/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/understanding-video/" class="link black dim">
         Understanding Video
       </a>
@@ -294,26 +313,6 @@ So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate th
 <p>There are two types of memory: Stack and Heap. As the name suggests on stack memory things will be put one above other and popped in reverse order. Since you know where you are putting things and removing from, stack memory is extremely fast.</p>
     </div>
     <a href="/tech/iron-beneath-the-rust/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/rust-ic/" class="link black dim">
-        Rustic
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>I have been hearing a lot about <code>Rust</code> lately. How it is fast and achieves near C/C++ performance. So, I was thinking of usecases where I can use it.</p>
-<p>I have been using Python (at work) for many years now. Python is a good starting point to embody business ideas as it significantly reduces development time. Libraries are readily available for almost all use cases.</p>
-<p>But when your product is built and is handling traffic at scale, you need to go deeper. Python can be a barrier too sometimes. We have migrated one of our high-traffic module from Python (Django) to Java (Spring Webflux) and have seen a 5x impovement in response times. That got me thinking about other options too and eventual interest in <code>Rust</code>.</p>
-    </div>
-    <a href="/tech/rust-ic/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 

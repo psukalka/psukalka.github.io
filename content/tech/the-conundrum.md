@@ -1,6 +1,6 @@
 +++
 date = '2025-05-22T21:43:16+05:30'
-draft = true
+draft = false
 title = 'The Conundrum: Sync Or Async'
 +++
 Suppose I migrate my code from being synchronous to asynchronous what does change ? Let's try to think through.
