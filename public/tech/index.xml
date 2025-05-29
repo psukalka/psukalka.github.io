@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 May 2025 21:43:16 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 28 May 2025 23:53:13 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maintaining A Database</title>
+      <link>http://pvsukalkar.in/tech/maintaining-database/</link>
+      <pubDate>Wed, 28 May 2025 23:53:13 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/maintaining-database/</guid>
+      <description>&lt;p&gt;We use Django Framework in our system. Django comes with its own ORM for relational databases. There are few tables which are being used from 7+ years now, so we decided to look into them.&lt;/p&gt;&#xA;&lt;p&gt;To check how much space a table is using, we can run following Postgres query:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;     SELECT&#xA;        schemaname,&#xA;        tablename,&#xA;        pg_size_pretty(pg_total_relation_size(schemaname||&amp;#39;.&amp;#39;||tablename)) as total_size,&#xA;        pg_size_pretty(pg_relation_size(schemaname||&amp;#39;.&amp;#39;||tablename)) as table_size,&#xA;        pg_size_pretty(pg_indexes_size(schemaname||&amp;#39;.&amp;#39;||tablename)) as indexes_size&#xA;    FROM pg_tables&#xA;    WHERE tablename = &amp;#39;{table_name}&amp;#39;;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It turned out that the table is using 1.5GB space and its indexes are using 6.5GB space. This came as a surprise to me as I was always under the impression that indexes are smaller than table. Yes, indeed they are smaller but how many indexes you create also matters. It turns out that we had 50+ indexes on our table. Obviously not all of them are being used. So, I checked indexes and their usage with this query:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>The Conundrum: Sync Or Async</title>
       <link>http://pvsukalkar.in/tech/the-conundrum/</link>
