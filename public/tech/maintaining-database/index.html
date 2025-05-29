@@ -63,7 +63,7 @@ To check how much space a table is using, we can run following Postgres query:
 SELECT schemaname, tablename, pg_size_pretty(pg_total_relation_size(schemaname||&#39;.&#39;||tablename)) as total_size, pg_size_pretty(pg_relation_size(schemaname||&#39;.&#39;||tablename)) as table_size, pg_size_pretty(pg_indexes_size(schemaname||&#39;.&#39;||tablename)) as indexes_size FROM pg_tables WHERE tablename = &#39;{table_name}&#39;; It turned out that the table is using 1.5GB space and its indexes are using 6.5GB space. This came as a surprise to me as I was always under the impression that indexes are smaller than table. Yes, indeed they are smaller but how many indexes you create also matters. It turns out that we had 50&#43; indexes on our table. Obviously not all of them are being used. So, I checked indexes and their usage with this query:">
   <meta itemprop="datePublished" content="2025-05-28T23:53:13+05:30">
   <meta itemprop="dateModified" content="2025-05-28T23:53:13+05:30">
-  <meta itemprop="wordCount" content="419">
+  <meta itemprop="wordCount" content="477">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Maintaining A Database">
   <meta name="twitter:description" content="We use Django Framework in our system. Django comes with its own ORM for relational databases. There are few tables which are being used from 7&#43; years now, so we decided to look into them.
@@ -180,6 +180,7 @@ SELECT schemaname, tablename, pg_size_pretty(pg_total_relation_size(schemaname||
 <p>For Django, I just had to remove <code>db_index=True</code> for these fields and indexes got removed on running migration.</p>
 <p>Another interesting thing was that multiple indexes were created for some field. For ex, <code>slug</code> field had 3 indexes. One regular index, one index with <code>_like</code> prefix and one index with <code>_key</code> prefix. Turns out that for <code>CharField</code> fields, 2 indexes are created. One for exact match and one for <code>like</code> queries. The reason is something related to <code>byte-comparison</code> and <code>collation-comparison</code> (based on language rules). You can google further. The third index <code>_key</code> was created due to <code>unique=True</code> constraint.</p>
 <p>After cleaning up the table (by removing about 15+ indexes) I again checked the size. But surprisingly the size didn&rsquo;t decrease even by 1kB. I ran <code>VACUUM ANALYZE</code> too hoping that it would reclaim the space. But that didn&rsquo;t happen. Turns out that Postgres doesn&rsquo;t ever return space back to OS until you run the <code>VACUUM FULL</code> (which would mean downtime). But no need to worry, all next insertions in the table will use the recently cleared space. So, table size won&rsquo;t increase for some time till the cleared space is used.</p>
+<p>In the end, the more indexes that you create the more expensive your write becomes. Over the years we had added around 50+ indexes on the table so each write would have to go and update these indexes (meaning 50+ writes). So, if writes become slow it is the database that we blame rather than understanding our follies.</p>
 <ul class="pa0">
   
 </ul>
