@@ -1,0 +1,16 @@
++++
+date = '2025-05-30T10:26:08+05:30'
+draft = false
+title = 'Sentry - For The Black'
++++
+*Where can I find the logs ?* was one of the initial questions that I asked while understanding our system. I came from a background where you need to see logs to find issues. I was taken aback when I heard that they don't capture logs. I kept wondering how they resolve issues in production. 
+
+It's been 5+ years now working in the system and I have rarely used logs. It brings a smile to my face when some new joinee asks for logs. With Sentry catching errors has become quite easy. Enable sentry on one of the servers and if any case throws error alerts are raised immediately. Whoever sent the buggy code is responsible to fix it immediately. Sentry alert gives you all details you would ever need to fix that bug. Which API ? Which Machine ? Which line ? What error ? What were the local variables ? ... Thus, we have been able to scale to millions of users without ever depending on logs. Any bug that creeps in, gets killed in nascent stage. 
+
+When things are black (error) and white (non-error), Sentry is very good at alerting it. But as system grows things are not clear black and white. The grey area evolves. Now you come with performance issues. These issues are not exactly bugs. User is still getting the response but the response is delayed than expected. And also it is not for all users, but for some users. Maybe during increased load. Maybe database is taking more time to respond. Maybe there isn't index added on some table. Maybe the API call that you made isn't responding quickly. Case can be anything. But Sentry won't catch this grey area. You need some Application Performance Management (APM) tool for this. We use New Relic and CubeAPM for this. 
+
+Performance management tool can analyze your requests on time basis. In processing the request how much time was spent on each step ? Which is the step that took longer ? How many external calls are you making ? What is the P95 or P99 latency ? For which users the latency has increased ? It can provide you the stack trace for those users. Along with Sentry, if you monitor your releases with APM, you can quickly catch if you have released any performance issue with new release and fix it immediately. 
+
+But as system further evolves, so does the grey line. Now you are caught with issues of accountability. Client is getting the response and response is reaching in time but the response is not expected one. So, did ML send incorrect response ? Did we process it incorrectly ? But it doesn't happen for all users, only some users are complaining. So, how do you fix it ? Also take another case. There is a content piece. Multiple people are working on it. It should have been in draft but has gone live. All people working on it are claiming that they didn't make it live. What to do ? Is anyone lying or did any background task go rogue ? You need request - response logs for such cases. 
+
+As system grows, you can't expect all the issues you might face. So, keeping a record (or log) of interactions has been a time-tested approach. 

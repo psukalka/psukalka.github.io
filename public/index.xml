@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 May 2025 23:53:13 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 10:26:08 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sentry - For The Black</title>
+      <link>http://pvsukalkar.in/tech/sentry/</link>
+      <pubDate>Fri, 30 May 2025 10:26:08 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/sentry/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Where can I find the logs ?&lt;/em&gt; was one of the initial questions that I asked while understanding our system. I came from a background where you need to see logs to find issues. I was taken aback when I heard that they don&amp;rsquo;t capture logs. I kept wondering how they resolve issues in production.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s been 5+ years now working in the system and I have rarely used logs. It brings a smile to my face when some new joinee asks for logs. With Sentry catching errors has become quite easy. Enable sentry on one of the servers and if any case throws error alerts are raised immediately. Whoever sent the buggy code is responsible to fix it immediately. Sentry alert gives you all details you would ever need to fix that bug. Which API ? Which Machine ? Which line ? What error ? What were the local variables ? &amp;hellip; Thus, we have been able to scale to millions of users without ever depending on logs. Any bug that creeps in, gets killed in nascent stage.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Maintaining A Database</title>
       <link>http://pvsukalkar.in/tech/maintaining-database/</link>

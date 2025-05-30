@@ -127,6 +127,25 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/sentry/" class="link black dim">
+        Sentry - For The Black
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p><em>Where can I find the logs ?</em> was one of the initial questions that I asked while understanding our system. I came from a background where you need to see logs to find issues. I was taken aback when I heard that they don&rsquo;t capture logs. I kept wondering how they resolve issues in production.</p>
+<p>It&rsquo;s been 5+ years now working in the system and I have rarely used logs. It brings a smile to my face when some new joinee asks for logs. With Sentry catching errors has become quite easy. Enable sentry on one of the servers and if any case throws error alerts are raised immediately. Whoever sent the buggy code is responsible to fix it immediately. Sentry alert gives you all details you would ever need to fix that bug. Which API ? Which Machine ? Which line ? What error ? What were the local variables ? &hellip; Thus, we have been able to scale to millions of users without ever depending on logs. Any bug that creeps in, gets killed in nascent stage.</p>
+    </div>
+    <a href="/tech/sentry/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/maintaining-database/" class="link black dim">
         Maintaining A Database
       </a>
@@ -303,25 +322,6 @@ So, for a 10 min video there will be 10*60/3 = 200 snapshots. We can generate th
       <p>Just as a golf caddie makes the game easier for golfers by carrying their equipments and offering guidance, the Caddy web server aims to make web hosting easier by handling complicated tasks (like SSL/TLS certificates) automatically. With caddy, you don&rsquo;t need to worry about your certificate expiration. It started back in the days when Let&rsquo;s Encrypt was just starting and enabling HTTPS on your website was a headache and costly.</p>
     </div>
     <a href="/tech/caddy/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/nginx/" class="link black dim">
-        Nginx
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Nginx can be used for multiple purposes like web serving, load balancing or reverse proxying. It was designed to solve C10k problem so obviously it can handle large number of connections simultaneously. Besides, it also excels at serving static content. But how does it achieve this ?</p>
-<p>Nginx follows an asynchronous event-driven architecture. There is a master process that manages all worker processes. Typically there are as many workers as there are CPU cores. Each worker has an event loop running inside it. When an event comes on socket, OS notifies worker. Worker registers interest in the event and moves ahead. When data is received from client, a read event is triggered which is then processed by worker. Thus, the worker continues with its events without being blocked.</p>
-    </div>
-    <a href="/tech/nginx/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 
