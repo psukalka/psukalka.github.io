@@ -13,4 +13,4 @@ Performance management tool can analyze your requests on time basis. In processi
 
 But as system further evolves, so does the grey line. Now you are caught with issues of accountability. Client is getting the response and response is reaching in time but the response is not expected one. So, did ML send incorrect response ? Did we process it incorrectly ? But it doesn't happen for all users, only some users are complaining. So, how do you fix it ? Also take another case. There is a content piece. Multiple people are working on it. It should have been in draft but has gone live. All people working on it are claiming that they didn't make it live. What to do ? Is anyone lying or did any background task go rogue ? You need request - response logs for such cases. 
 
-As system grows, you can't expect all the issues you might face. So, keeping a record (or log) of interactions has been a time-tested approach. 
+As system grows, you can't expect all the issues you might face. So, keeping a record (or log) of interactions has been a time-tested approach. Just like Karma...
