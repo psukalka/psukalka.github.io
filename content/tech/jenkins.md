@@ -18,7 +18,7 @@ So, if I want to automate this, the steps would be as follows:
 
 ----
 
-Now let's think about the Jenkins process that would be running somewhere. The nudge that something has been pushed to git branch can come anytime. So, this process would have to continue listen over network. So, this should be some server. I'm comfortable in Django, so maybe Django server. But it would consume more memory so might search for some other alternatives. 
+Now let's think about the Jenkins process that would be running somewhere. The nudge that something has been pushed to git branch can come anytime. So, this process would have to continue listening over network. So, this should be some server. I'm comfortable in Django, so maybe Django server. But it would consume more memory so might search for some other alternatives. 
 
 Now if it is a server, will it have any database ? Otherwise how will it store the status of deployment, time taken to process the deployment, logs of deployment, ... ? This data should be stored somewhere. sqlite would be the most obvious option to not increase server footprint. 
 
@@ -64,4 +64,5 @@ So, we have thought about the core functionality that Jenkins should provide. Bu
 2. The production machine can be inhouse, on AWS cloud, GCP cloud, ... so some standard mechanism to grant permission to Jenkins and some standard mechanism to find dynamic IPs at runtime
 3. Deployment scripts can vary depending on languages like Python, Java, Rust, ... In Python, just reload server would be enough. For Java compiling and then deploying the jars is needed. Requirements can vary as per languages so some plugin for languages also should be needed. 
 Finally, the platform where this is run (Linux / Windows / ...) should also be handled. 
+
 With this in mind, I'll now go and deep-dive in Jenkins on how they built it. 

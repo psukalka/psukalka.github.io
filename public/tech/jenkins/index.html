@@ -153,7 +153,7 @@ So, Jenkins for me is an automated deployment tool. So, before automating someth
 <li>To run the deployment script I would need it present somewhere. It can vary depending on codebases, languages, &hellip; Better if this is part of the codebase itself.</li>
 </ol>
 <hr>
-<p>Now let&rsquo;s think about the Jenkins process that would be running somewhere. The nudge that something has been pushed to git branch can come anytime. So, this process would have to continue listen over network. So, this should be some server. I&rsquo;m comfortable in Django, so maybe Django server. But it would consume more memory so might search for some other alternatives.</p>
+<p>Now let&rsquo;s think about the Jenkins process that would be running somewhere. The nudge that something has been pushed to git branch can come anytime. So, this process would have to continue listening over network. So, this should be some server. I&rsquo;m comfortable in Django, so maybe Django server. But it would consume more memory so might search for some other alternatives.</p>
 <p>Now if it is a server, will it have any database ? Otherwise how will it store the status of deployment, time taken to process the deployment, logs of deployment, &hellip; ? This data should be stored somewhere. sqlite would be the most obvious option to not increase server footprint.</p>
 <p>Now, when a deployment starts we have identified that the script to run would be stored in some (JenkinsFile) inside the codebase. But how would my Jenkins server contact the production server where code is to be deployed ? How will it know about the IP addresses ?</p>
 <p>Since this is manual information to start the deployment this should be provided while creating the <code>Job</code>.</p>
@@ -185,9 +185,9 @@ Secondly, should the tracking API be pull based ? I guess deployments won&rsquo;
 <li>Users can use multiple version controls like GitHub, BitBucket, Perforce, CVS, &hellip; so a plugin architecture for this</li>
 <li>The production machine can be inhouse, on AWS cloud, GCP cloud, &hellip; so some standard mechanism to grant permission to Jenkins and some standard mechanism to find dynamic IPs at runtime</li>
 <li>Deployment scripts can vary depending on languages like Python, Java, Rust, &hellip; In Python, just reload server would be enough. For Java compiling and then deploying the jars is needed. Requirements can vary as per languages so some plugin for languages also should be needed.
-Finally, the platform where this is run (Linux / Windows / &hellip;) should also be handled.
-With this in mind, I&rsquo;ll now go and deep-dive in Jenkins on how they built it.</li>
+Finally, the platform where this is run (Linux / Windows / &hellip;) should also be handled.</li>
 </ol>
+<p>With this in mind, I&rsquo;ll now go and deep-dive in Jenkins on how they built it.</p>
 <ul class="pa0">
   
 </ul>
