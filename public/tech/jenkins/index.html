@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Building Jenkins | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="I have used Jenkins to deploy jobs but that&rsquo;s the extent of my usage. I was going to deep-dive into Jenkins. But before that I got a thought, why not think of building Jenkins if I had to build one ? If I was to build Jenkins, how would I have done it ?
+So, Jenkins for me is an automated deployment tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/jenkins/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/jenkins/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Building Jenkins">
+  <meta property="og:description" content="I have used Jenkins to deploy jobs but that’s the extent of my usage. I was going to deep-dive into Jenkins. But before that I got a thought, why not think of building Jenkins if I had to build one ? If I was to build Jenkins, how would I have done it ?
+So, Jenkins for me is an automated deployment tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-06-04T23:01:50+05:30">
+    <meta property="article:modified_time" content="2025-06-04T23:01:50+05:30">
+
+  <meta itemprop="name" content="Building Jenkins">
+  <meta itemprop="description" content="I have used Jenkins to deploy jobs but that’s the extent of my usage. I was going to deep-dive into Jenkins. But before that I got a thought, why not think of building Jenkins if I had to build one ? If I was to build Jenkins, how would I have done it ?
+So, Jenkins for me is an automated deployment tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:">
+  <meta itemprop="datePublished" content="2025-06-04T23:01:50+05:30">
+  <meta itemprop="dateModified" content="2025-06-04T23:01:50+05:30">
+  <meta itemprop="wordCount" content="661">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Building Jenkins">
+  <meta name="twitter:description" content="I have used Jenkins to deploy jobs but that’s the extent of my usage. I was going to deep-dive into Jenkins. But before that I got a thought, why not think of building Jenkins if I had to build one ? If I was to build Jenkins, how would I have done it ?
+So, Jenkins for me is an automated deployment tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Building Jenkins</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-06-04T23:01:50+05:30">June 4, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I have used Jenkins to deploy jobs but that&rsquo;s the extent of my usage. I was going to deep-dive into Jenkins. But before that I got a thought, why not think of building Jenkins if I had to build one ? If I was to build Jenkins, how would I have done it ?</p>
+<p>So, Jenkins for me is an <code>automated deployment</code> tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:</p>
+<ol>
+<li>Detect that there are some changes in the <code>master</code> branch</li>
+<li>SSH to the production machine</li>
+<li>Run the deployment script</li>
+</ol>
+<p>So, if I want to automate this, the steps would be as follows:</p>
+<ol>
+<li>Detection can be manual, through cron job (pull mechanism) or some webhook (push mechanism)</li>
+<li>To SSH to the machine I would need two things. IP address of the machine and access to that machine</li>
+<li>To run the deployment script I would need it present somewhere. It can vary depending on codebases, languages, &hellip; Better if this is part of the codebase itself.</li>
+</ol>
+<hr>
+<p>Now let&rsquo;s think about the Jenkins process that would be running somewhere. The nudge that something has been pushed to git branch can come anytime. So, this process would have to continue listen over network. So, this should be some server. I&rsquo;m comfortable in Django, so maybe Django server. But it would consume more memory so might search for some other alternatives.</p>
+<p>Now if it is a server, will it have any database ? Otherwise how will it store the status of deployment, time taken to process the deployment, logs of deployment, &hellip; ? This data should be stored somewhere. sqlite would be the most obvious option to not increase server footprint.</p>
+<p>Now, when a deployment starts we have identified that the script to run would be stored in some (JenkinsFile) inside the codebase. But how would my Jenkins server contact the production server where code is to be deployed ? How will it know about the IP addresses ?</p>
+<p>Since this is manual information to start the deployment this should be provided while creating the <code>Job</code>.</p>
+<p>So, there should be one API like:</p>
+<pre tabindex="0"><code>POST /api/v1/jobs/
+
+body: 
+{
+    &#34;branch&#34;: &#34;master&#34;,
+    &#34;codebase_url&#34;: &#34;github path&#34;,
+    &#34;ip_addr&#34;: &#34;static address or script if the IP is dynamic like spot instances&#34;
+}
+</code></pre><p>In response a job would be created with some id.</p>
+<p>Then I can trigger deployment on this job with:</p>
+<pre tabindex="0"><code>POST /api/v1/jobs/&lt;job-id&gt;/deployments/
+
+body: 
+{
+    &#34;params&#34;: &#34;if any&#34;
+}
+</code></pre><p>And finally I can track status of the deployment using:</p>
+<pre tabindex="0"><code>GET /api/v1/jobs/&lt;job-id&gt;/deployments/&lt;deployment-id&gt;/
+</code></pre><hr>
+<p>Ok, let&rsquo;s think about the deployment script running on the production server. If it is running on the server, how will logs come back to Jenkins ? Does it copy them everytime or it serves them from production server when needed ?
+Secondly, should the tracking API be pull based ? I guess deployments won&rsquo;t be that frequent and server should be able to handle these many GET requests so that should be fine.</p>
+<hr>
+<p>So, we have thought about the core functionality that Jenkins should provide. But how should its architecture be ? Like at each stage there can be different instances:</p>
+<ol>
+<li>Users can use multiple version controls like GitHub, BitBucket, Perforce, CVS, &hellip; so a plugin architecture for this</li>
+<li>The production machine can be inhouse, on AWS cloud, GCP cloud, &hellip; so some standard mechanism to grant permission to Jenkins and some standard mechanism to find dynamic IPs at runtime</li>
+<li>Deployment scripts can vary depending on languages like Python, Java, Rust, &hellip; In Python, just reload server would be enough. For Java compiling and then deploying the jars is needed. Requirements can vary as per languages so some plugin for languages also should be needed.
+Finally, the platform where this is run (Linux / Windows / &hellip;) should also be handled.
+With this in mind, I&rsquo;ll now go and deep-dive in Jenkins on how they built it.</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
