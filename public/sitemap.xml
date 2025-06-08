@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://pvsukalkar.in/tech/jenkins/</loc>
-    <lastmod>2025-06-04T23:01:50+05:30</lastmod>
+    <loc>http://pvsukalkar.in/tech/apache-bench/</loc>
+    <lastmod>2025-06-08T20:57:38+05:30</lastmod>
   </url><url>
     <loc>http://pvsukalkar.in/</loc>
+    <lastmod>2025-06-08T20:57:38+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/tech/jenkins/</loc>
     <lastmod>2025-06-04T23:01:50+05:30</lastmod>
   </url><url>
     <loc>http://pvsukalkar.in/tech/sentry/</loc>

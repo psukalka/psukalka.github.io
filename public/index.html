@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-06-04T23:01:50+05:30">
-  <meta itemprop="dateModified" content="2025-06-04T23:01:50+05:30">
+  <meta itemprop="datePublished" content="2025-06-08T20:57:38+05:30">
+  <meta itemprop="dateModified" content="2025-06-08T20:57:38+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -143,6 +143,30 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/apache-bench/" class="color-inherit dim link">
+            Apache Bench
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>I wanted to replace <code>python manage.py runserver</code> command with <code>uwsgi</code> for production. But before taking any decision I want it to be assessed with some data. Even if some blog says uwsgi can handle better concurrent load, memory management and caching why should I believe it ? How can I test to be clear.</p>
+<p>For starter, I can write a python script that can send n number of requests and I can make them concurrent calls using async / threads. But is there any other readily available option ? When I explored, there is an option: <code>Apache Bench (ab)</code></p>
+        </div>
+        <a href="/tech/apache-bench/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/jenkins/" class="color-inherit dim link">
             Building Jenkins
             </a>
@@ -183,45 +207,18 @@
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/maintaining-database/" class="color-inherit dim link">
-            Maintaining A Database
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>We use Django Framework in our system. Django comes with its own ORM for relational databases. There are few tables which are being used from 7+ years now, so we decided to look into them.</p>
-<p>To check how much space a table is using, we can run following Postgres query:</p>
-<pre tabindex="0"><code>     SELECT
-        schemaname,
-        tablename,
-        pg_size_pretty(pg_total_relation_size(schemaname||&#39;.&#39;||tablename)) as total_size,
-        pg_size_pretty(pg_relation_size(schemaname||&#39;.&#39;||tablename)) as table_size,
-        pg_size_pretty(pg_indexes_size(schemaname||&#39;.&#39;||tablename)) as indexes_size
-    FROM pg_tables
-    WHERE tablename = &#39;{table_name}&#39;;
-</code></pre><p>It turned out that the table is using 1.5GB space and its indexes are using 6.5GB space. This came as a surprise to me as I was always under the impression that indexes are smaller than table. Yes, indeed they are smaller but how many indexes you create also matters. It turns out that we had 50+ indexes on our table. Obviously not all of them are being used. So, I checked indexes and their usage with this query:</p>
-        </div>
-        <a href="/tech/maintaining-database/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/maintaining-database/" class="link black dim">
+                Maintaining A Database
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/the-conundrum/" class="link black dim">
@@ -238,12 +235,6 @@
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/the-swiss-knife/" class="link black dim">
                 The Swiss Army Knife
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/drm/" class="link black dim">
-                DRM
               </a>
             </h2>
           

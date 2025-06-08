@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2025 23:01:50 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 08 Jun 2025 20:57:38 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Bench</title>
+      <link>http://pvsukalkar.in/tech/apache-bench/</link>
+      <pubDate>Sun, 08 Jun 2025 20:57:38 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/apache-bench/</guid>
+      <description>&lt;p&gt;I wanted to replace &lt;code&gt;python manage.py runserver&lt;/code&gt; command with &lt;code&gt;uwsgi&lt;/code&gt; for production. But before taking any decision I want it to be assessed with some data. Even if some blog says uwsgi can handle better concurrent load, memory management and caching why should I believe it ? How can I test to be clear.&lt;/p&gt;&#xA;&lt;p&gt;For starter, I can write a python script that can send n number of requests and I can make them concurrent calls using async / threads. But is there any other readily available option ? When I explored, there is an option: &lt;code&gt;Apache Bench (ab)&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Building Jenkins</title>
       <link>http://pvsukalkar.in/tech/jenkins/</link>
