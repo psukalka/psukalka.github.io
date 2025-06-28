@@ -13,7 +13,7 @@
       <link>http://pvsukalkar.in/tech/aspera/</link>
       <pubDate>Sat, 28 Jun 2025 07:42:43 +0530</pubDate>
       <guid>http://pvsukalkar.in/tech/aspera/</guid>
-      <description>&lt;p&gt;I heard about Aspera first time today. It is not a file storage, rather a file transfer technology. But what is the benefit ? and why do you need another technology ? Let&amp;rsquo;s dig deeper.&lt;/p&gt;&#xA;&lt;p&gt;Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I heard about &lt;a href=&#34;https://www.ibm.com/products/aspera&#34;&gt;Aspera&lt;/a&gt; first time today. It is not a file storage, rather a file transfer technology by IBM. But what is the benefit ? and why do you need another technology ? Let&amp;rsquo;s dig deeper.&lt;/p&gt;&#xA;&lt;p&gt;Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apache Bench</title>

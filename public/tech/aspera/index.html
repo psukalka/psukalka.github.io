@@ -6,7 +6,7 @@
     
     <title>Aspera | Diary Of An Observer</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology. But what is the benefit ? and why do you need another technology ? Let&rsquo;s dig deeper.
+    <meta name="description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology by IBM. But what is the benefit ? and why do you need another technology ? Let&rsquo;s dig deeper.
 Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.">
     <meta name="generator" content="Hugo 0.145.0">
     
@@ -39,7 +39,7 @@ Say, you are a production house. You produce movies or videos. The raw content i
     <meta property="og:url" content="http://pvsukalkar.in/tech/aspera/">
   <meta property="og:site_name" content="Diary Of An Observer">
   <meta property="og:title" content="Aspera">
-  <meta property="og:description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology. But what is the benefit ? and why do you need another technology ? Let’s dig deeper.
+  <meta property="og:description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology by IBM. But what is the benefit ? and why do you need another technology ? Let’s dig deeper.
 Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -48,14 +48,14 @@ Say, you are a production house. You produce movies or videos. The raw content i
     <meta property="article:modified_time" content="2025-06-28T07:42:43+05:30">
 
   <meta itemprop="name" content="Aspera">
-  <meta itemprop="description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology. But what is the benefit ? and why do you need another technology ? Let’s dig deeper.
+  <meta itemprop="description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology by IBM. But what is the benefit ? and why do you need another technology ? Let’s dig deeper.
 Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.">
   <meta itemprop="datePublished" content="2025-06-28T07:42:43+05:30">
   <meta itemprop="dateModified" content="2025-06-28T07:42:43+05:30">
-  <meta itemprop="wordCount" content="359">
+  <meta itemprop="wordCount" content="362">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Aspera">
-  <meta name="twitter:description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology. But what is the benefit ? and why do you need another technology ? Let’s dig deeper.
+  <meta name="twitter:description" content="I heard about Aspera first time today. It is not a file storage, rather a file transfer technology by IBM. But what is the benefit ? and why do you need another technology ? Let’s dig deeper.
 Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.">
 
       
@@ -139,11 +139,11 @@ Say, you are a production house. You produce movies or videos. The raw content i
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I heard about Aspera first time today. It is not a file storage, rather a file transfer technology. But what is the benefit ? and why do you need another technology ? Let&rsquo;s dig deeper.</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I heard about <a href="https://www.ibm.com/products/aspera">Aspera</a> first time today. It is not a file storage, rather a file transfer technology by IBM. But what is the benefit ? and why do you need another technology ? Let&rsquo;s dig deeper.</p>
 <p>Say, you are a production house. You produce movies or videos. The raw content is generally quite large in size. Like 100s of GB and sometimes can even go in TBs. Transferring this much content via network is quite slow. Instead just sending the content via hard disk is faster. Aspera shines for such cases. Despite size of content you get consistent speed. This is what happens internally.</p>
 <p>Aspera created their protocol FASP (Fast, adaptive, secure protocol) which is built on UDP instead of TCP. Other protocols of transfer like FTP, HTTP are built over TCP. TCP uses congestion control that backs off when their is packet loss, interpreting loss as network congestion. On high-latency, high-bandwidth networks (like intercontinental links), TCP&rsquo;s window scaling becomes a bottleneck. TCP&rsquo;s acknowledgement requirements create round-trip dependencies that limit throughput. FASP bypasses congestion control and implements its own adaptive rate control thus enabling it to use almost 100% of available bandwidth utilization even on high-latency links.</p>
 <p>If it is using UDP then how does it ensure reliability ? A transferred file having even 1% data loss won&rsquo;t play correctly, right ? Yes. To ensure reliability Aspera client maintains count of received packets. If it detects any packet loss it can ask aspera server to send those particular packets again thus ensuring reliability.</p>
-<p>As you might have guessed, since this (FASP) is a new protocol (not built-in) it needs its own client and server to understand it. So, you need to install Aspera client to download / upload files. Eventually you would be using some S3 / GCS as file storage but Aspera can&rsquo;t directly store files in these (as these storages understand TCP). You can solve this problem by installing Aspera server on EC2 that then stores files in S3. Here Aspera server acts as protocol translator, using UDP for client &lt;-&gt; Aspera server high speed transfer and HTTP / HTTPs (via TCP) for Aspera server &lt;-&gt; S3 APIs.</p>
+<p>As you might have guessed, since this (FASP) is a new protocol (not built-in) it needs its own client and server to understand it. So, you need to install Aspera client to download / upload files. Eventually you would be using some S3 / GCS as file storage but Aspera can&rsquo;t directly store files in these (as these storages understand TCP). You can solve this problem by installing Aspera server on EC2 that then stores files in S3. Here Aspera server acts as protocol translator, using UDP for client &lt;-&gt; Aspera server high speed transfer and HTTP / HTTPs (via TCP) for Aspera server &lt;-&gt; S3 APIs transfer.</p>
 <ul class="pa0">
   
 </ul>
