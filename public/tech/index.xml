@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jun 2025 07:42:43 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jun 2025 18:10:56 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gunicorn</title>
+      <link>http://pvsukalkar.in/tech/gunicorn/</link>
+      <pubDate>Sun, 29 Jun 2025 18:10:56 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/gunicorn/</guid>
+      <description>&lt;p&gt;While development, we run Django application using &lt;code&gt;python manage.py runserver&lt;/code&gt;. But that is not recommended for production use. Why so ?&lt;/p&gt;&#xA;&lt;p&gt;Firstly, in development mode, lot of details are returned which expose internals of system. This is a security risk in production. Secondly, application doesn&amp;rsquo;t auto-restart if it crashes with some error. Memory leaks in application accumulate over time eventually leading to crashing of server. Load can&amp;rsquo;t be balanced across CPU cores. Then static files are served synchronously this would result in queuing of requests. In dev mode server runs as a single thread so it can&amp;rsquo;t handle multiple concurrent requests thus increasing overall response time. There isn&amp;rsquo;t connection pooling for database connections. Overall it is not a reliable setup that should be used in production.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Aspera</title>
       <link>http://pvsukalkar.in/tech/aspera/</link>
