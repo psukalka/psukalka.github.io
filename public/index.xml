@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Jun 2025 18:10:56 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jul 2025 11:11:53 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Slack Integration</title>
+      <link>http://pvsukalkar.in/tech/slack/</link>
+      <pubDate>Sat, 05 Jul 2025 11:11:53 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/slack/</guid>
+      <description>&lt;p&gt;With scale, time becomes of essence in resolving an issue. Thus, identifying and resolving issues quickly becomes of essence. Collating data from multiple sources to debug an issue is not desirable in such case. If your workspace is on Slack, then getting alerts on Slack increases visibility and saves time in crisis (when it matters). Slack can also be used to send alerts of any background tasks like celery tasks, jenkins deployments, &amp;hellip;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Gunicorn</title>
       <link>http://pvsukalkar.in/tech/gunicorn/</link>
