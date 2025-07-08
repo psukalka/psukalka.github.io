@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Jul 2025 11:11:53 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jul 2025 18:04:41 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VPN</title>
+      <link>http://pvsukalkar.in/tech/vpn/</link>
+      <pubDate>Tue, 08 Jul 2025 18:04:41 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/vpn/</guid>
+      <description>&lt;p&gt;We generally use VPN (Virtual Private Network) to test whether content piece is accessible from another country. Using VPN our servers are tricked as if the request is coming from another country. How does this happen ?&lt;/p&gt;&#xA;&lt;p&gt;On a simple level, when VPN app is running on my device it will send all my requests (app or browser requests) to the VPN server that is located in some another country. VPN server will then forward these requests to the destination server. Since the request has actually come from another country, destination server will respond. This response will then be forwarded back to me. Thus VPN has acted as a middle-man or proxy to send my request.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Slack Integration</title>
       <link>http://pvsukalkar.in/tech/slack/</link>
