@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Managements on Diary Of An Observer</title>
+    <link>http://pvsukalkar.in/management/</link>
+    <description>Recent content in Managements on Diary Of An Observer</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Jul 2025 21:24:34 +0530</lastBuildDate>
+    <atom:link href="http://pvsukalkar.in/management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Management With Sentry</title>
+      <link>http://pvsukalkar.in/management/management-with-sentry/</link>
+      <pubDate>Sun, 13 Jul 2025 21:24:34 +0530</pubDate>
+      <guid>http://pvsukalkar.in/management/management-with-sentry/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m helping a friend in managing his tech venture. He got the project built with a Consultancy Service and they have done quite a good job. When I started on the project it was a live app working in production. I had to manage the tech team given that the consultants had now done their job.&lt;/p&gt;&#xA;&lt;p&gt;Codebase was in Python (Django) which I am already familiar with from my office work. I started going through the codebase. I understood the flows in a few days. I started giving time after office hours while their team used to work in daytime. So, there was no syncing between me and the team. Neither did I have any test app build that I could use to identify important API flows. On top of that everything seemed to work, so I didn&amp;rsquo;t have any way to barge in. As a production project whatever I would imagine should be in place was already there and even better than I would think in some places. When something is working, it is difficult to make your way in.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
