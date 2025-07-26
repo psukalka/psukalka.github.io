@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jul 2025 18:04:41 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 05:42:36 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH vs HTTPS</title>
+      <link>http://pvsukalkar.in/tech/ssh-vs-https/</link>
+      <pubDate>Sat, 26 Jul 2025 05:42:36 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/ssh-vs-https/</guid>
+      <description>&lt;p&gt;Before we can ssh into a server, we need to (manually) provide our public key to the server. Server stores this key in &lt;code&gt;authorized_keys&lt;/code&gt; file under &lt;code&gt;~/.ssh&lt;/code&gt; directory. Similarly, when we try to ssh to a server, our laptop asks if you want to add this server to known hosts.&#xA;If selected &lt;code&gt;yes&lt;/code&gt; an entry will be made to &lt;code&gt;known_hosts&lt;/code&gt; file in local system. This entry is of the server&amp;rsquo;s public key.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>VPN</title>
       <link>http://pvsukalkar.in/tech/vpn/</link>

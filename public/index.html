@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-07-13T21:24:34+05:30">
-  <meta itemprop="dateModified" content="2025-07-13T21:24:34+05:30">
+  <meta itemprop="datePublished" content="2025-07-26T05:42:36+05:30">
+  <meta itemprop="dateModified" content="2025-07-26T05:42:36+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,30 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/ssh-vs-https/" class="color-inherit dim link">
+            SSH vs HTTPS
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>Before we can ssh into a server, we need to (manually) provide our public key to the server. Server stores this key in <code>authorized_keys</code> file under <code>~/.ssh</code> directory. Similarly, when we try to ssh to a server, our laptop asks if you want to add this server to known hosts.
+If selected <code>yes</code> an entry will be made to <code>known_hosts</code> file in local system. This entry is of the server&rsquo;s public key.</p>
+        </div>
+        <a href="/tech/ssh-vs-https/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/vpn/" class="color-inherit dim link">
             VPN
             </a>
@@ -188,36 +212,18 @@
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/gunicorn/" class="color-inherit dim link">
-            Gunicorn
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>While development, we run Django application using <code>python manage.py runserver</code>. But that is not recommended for production use. Why so ?</p>
-<p>Firstly, in development mode, lot of details are returned which expose internals of system. This is a security risk in production. Secondly, application doesn&rsquo;t auto-restart if it crashes with some error. Memory leaks in application accumulate over time eventually leading to crashing of server. Load can&rsquo;t be balanced across CPU cores. Then static files are served synchronously this would result in queuing of requests. In dev mode server runs as a single thread so it can&rsquo;t handle multiple concurrent requests thus increasing overall response time. There isn&rsquo;t connection pooling for database connections. Overall it is not a reliable setup that should be used in production.</p>
-        </div>
-        <a href="/tech/gunicorn/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/gunicorn/" class="link black dim">
+                Gunicorn
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/aspera/" class="link black dim">
@@ -234,12 +240,6 @@
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/jenkins/" class="link black dim">
                 Building Jenkins
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/sentry/" class="link black dim">
-                Sentry - For The Black
               </a>
             </h2>
           
