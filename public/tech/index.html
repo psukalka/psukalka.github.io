@@ -133,6 +133,26 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/ecs-pipeline/" class="link black dim">
+        ECS Pipeline
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>If you have a docker image of your service you can deploy it scalably using ECS.
+AWS handles all the orchestration for you. You need to provide a <code>task definition</code> and once deployment is run, ECS creates tasks (running containers) as per task definition. An ECS service ensures that desired number of tasks are always running.</p>
+<p>For standard services you have container images publically available. But mostly if you are using ECS, you will be trying to create your own docker image that would run some server or anything. But then how does ECS know about your docker image ?</p>
+    </div>
+    <a href="/tech/ecs-pipeline/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/ssh-vs-https/" class="link black dim">
         SSH vs HTTPS
       </a>
@@ -302,25 +322,6 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
 </code></pre><p>It turned out that the table is using 1.5GB space and its indexes are using 6.5GB space. This came as a surprise to me as I was always under the impression that indexes are smaller than table. Yes, indeed they are smaller but how many indexes you create also matters. It turns out that we had 50+ indexes on our table. Obviously not all of them are being used. So, I checked indexes and their usage with this query:</p>
     </div>
     <a href="/tech/maintaining-database/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/the-conundrum/" class="link black dim">
-        The Conundrum: Sync Or Async
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Suppose I migrate my code from being synchronous to asynchronous what does change ? Let&rsquo;s try to think through.</p>
-<p>Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.</p>
-    </div>
-    <a href="/tech/the-conundrum/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 

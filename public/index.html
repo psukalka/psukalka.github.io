@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-07-26T05:42:36+05:30">
-  <meta itemprop="dateModified" content="2025-07-26T05:42:36+05:30">
+  <meta itemprop="datePublished" content="2025-07-30T10:48:04+05:30">
+  <meta itemprop="dateModified" content="2025-07-30T10:48:04+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/ecs-pipeline/" class="color-inherit dim link">
+            ECS Pipeline
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>If you have a docker image of your service you can deploy it scalably using ECS.
+AWS handles all the orchestration for you. You need to provide a <code>task definition</code> and once deployment is run, ECS creates tasks (running containers) as per task definition. An ECS service ensures that desired number of tasks are always running.</p>
+<p>For standard services you have container images publically available. But mostly if you are using ECS, you will be trying to create your own docker image that would run some server or anything. But then how does ECS know about your docker image ?</p>
+        </div>
+        <a href="/tech/ecs-pipeline/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/ssh-vs-https/" class="color-inherit dim link">
             SSH vs HTTPS
             </a>
@@ -189,35 +214,18 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/slack/" class="color-inherit dim link">
-            Slack Integration
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>With scale, time becomes of essence in resolving an issue. Thus, identifying and resolving issues quickly becomes of essence. Collating data from multiple sources to debug an issue is not desirable in such case. If your workspace is on Slack, then getting alerts on Slack increases visibility and saves time in crisis (when it matters). Slack can also be used to send alerts of any background tasks like celery tasks, jenkins deployments, &hellip;</p>
-        </div>
-        <a href="/tech/slack/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/slack/" class="link black dim">
+                Slack Integration
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/gunicorn/" class="link black dim">
@@ -234,12 +242,6 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/apache-bench/" class="link black dim">
                 Apache Bench
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/jenkins/" class="link black dim">
-                Building Jenkins
               </a>
             </h2>
           

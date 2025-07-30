@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Jul 2025 05:42:36 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jul 2025 10:48:04 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ECS Pipeline</title>
+      <link>http://pvsukalkar.in/tech/ecs-pipeline/</link>
+      <pubDate>Wed, 30 Jul 2025 10:48:04 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/ecs-pipeline/</guid>
+      <description>&lt;p&gt;If you have a docker image of your service you can deploy it scalably using ECS.&#xA;AWS handles all the orchestration for you. You need to provide a &lt;code&gt;task definition&lt;/code&gt; and once deployment is run, ECS creates tasks (running containers) as per task definition. An ECS service ensures that desired number of tasks are always running.&lt;/p&gt;&#xA;&lt;p&gt;For standard services you have container images publically available. But mostly if you are using ECS, you will be trying to create your own docker image that would run some server or anything. But then how does ECS know about your docker image ?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SSH vs HTTPS</title>
       <link>http://pvsukalkar.in/tech/ssh-vs-https/</link>
