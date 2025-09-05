@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://pvsukalkar.in/misc/2500km/</loc>
+    <lastmod>2025-09-06T02:51:11+05:30</lastmod>
+  </url><url>
     <loc>http://pvsukalkar.in/</loc>
-    <lastmod>2025-07-30T10:48:04+05:30</lastmod>
+    <lastmod>2025-09-06T02:51:11+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/misc/</loc>
+    <lastmod>2025-09-06T02:51:11+05:30</lastmod>
   </url><url>
     <loc>http://pvsukalkar.in/tech/ecs-pipeline/</loc>
     <lastmod>2025-07-30T10:48:04+05:30</lastmod>
