@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jul 2025 10:48:04 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 16 Sep 2025 10:32:51 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redis Valkey</title>
+      <link>http://pvsukalkar.in/tech/redis-valkey/</link>
+      <pubDate>Tue, 16 Sep 2025 10:32:51 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/redis-valkey/</guid>
+      <description>&lt;p&gt;Redis used to be open source with BSD license. Berkeley Software Distribution (BSD) license gives full permission to use the software. It is like &lt;code&gt;do whatever you want with this code, just don&#39;t blame us if it doesn&#39;t work&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Cloud providers used Redis and made lot of money over it, but nothing was shared back to Redis Ltd.&#xA;Hence, they moved to a more restrictive licensing on March 2024. Their source code is still available but not for commercial hosting / service use. For commercial use you need to take their permission.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>ECS Pipeline</title>
       <link>http://pvsukalkar.in/tech/ecs-pipeline/</link>

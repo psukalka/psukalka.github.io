@@ -133,6 +133,26 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/redis-valkey/" class="link black dim">
+        Redis Valkey
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Redis used to be open source with BSD license. Berkeley Software Distribution (BSD) license gives full permission to use the software. It is like <code>do whatever you want with this code, just don't blame us if it doesn't work</code>.</p>
+<p>Cloud providers used Redis and made lot of money over it, but nothing was shared back to Redis Ltd.
+Hence, they moved to a more restrictive licensing on March 2024. Their source code is still available but not for commercial hosting / service use. For commercial use you need to take their permission.</p>
+    </div>
+    <a href="/tech/redis-valkey/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/ecs-pipeline/" class="link black dim">
         ECS Pipeline
       </a>
@@ -294,34 +314,6 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
 <p>It&rsquo;s been 5+ years now working in the system and I have rarely used logs. It brings a smile to my face when some new joinee asks for logs. With Sentry catching errors has become quite easy. Enable sentry on one of the servers and if any case throws error alerts are raised immediately. Whoever sent the buggy code is responsible to fix it immediately. Sentry alert gives you all details you would ever need to fix that bug. Which API ? Which Machine ? Which line ? What error ? What were the local variables ? &hellip; Thus, we have been able to scale to millions of users without ever depending on logs. Any bug that creeps in, gets killed in nascent stage.</p>
     </div>
     <a href="/tech/sentry/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/maintaining-database/" class="link black dim">
-        Maintaining A Database
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>We use Django Framework in our system. Django comes with its own ORM for relational databases. There are few tables which are being used from 7+ years now, so we decided to look into them.</p>
-<p>To check how much space a table is using, we can run following Postgres query:</p>
-<pre tabindex="0"><code>     SELECT
-        schemaname,
-        tablename,
-        pg_size_pretty(pg_total_relation_size(schemaname||&#39;.&#39;||tablename)) as total_size,
-        pg_size_pretty(pg_relation_size(schemaname||&#39;.&#39;||tablename)) as table_size,
-        pg_size_pretty(pg_indexes_size(schemaname||&#39;.&#39;||tablename)) as indexes_size
-    FROM pg_tables
-    WHERE tablename = &#39;{table_name}&#39;;
-</code></pre><p>It turned out that the table is using 1.5GB space and its indexes are using 6.5GB space. This came as a surprise to me as I was always under the impression that indexes are smaller than table. Yes, indeed they are smaller but how many indexes you create also matters. It turns out that we had 50+ indexes on our table. Obviously not all of them are being used. So, I checked indexes and their usage with this query:</p>
-    </div>
-    <a href="/tech/maintaining-database/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 
