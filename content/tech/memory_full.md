@@ -109,3 +109,5 @@ def deep_wal_investigation_rds():
 From the investigation it came that, current WAL position was `38E/A801DF30` and the oldest required position by replication slots was `34E/8008F00`. So, the oldest WAL was around 40 (hex) segments behind, i.e. 64 segments behind. Each slot occupying around 16GB, total came out around 4TB.
 
 For the context, we have CDC pipeline setup on the RDS using DMS service of AWS. For some reason an old replication had gone down, so the maintainer created another replication slot without cleaning the older one. This resulted in memory being hogged by the inactive replication slot. While we actually used a GB of memory, we were paying for TB of memory due to this cleanup issue.
+
+I was able to debug the issue with Claude in an hour. I was just thinking how many days it would have taken me to just find out WAL stats...

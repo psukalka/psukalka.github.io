@@ -49,7 +49,7 @@
   <meta itemprop="description" content="On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.">
   <meta itemprop="datePublished" content="2025-10-04T23:29:55+05:30">
   <meta itemprop="dateModified" content="2025-10-04T23:29:55+05:30">
-  <meta itemprop="wordCount" content="495">
+  <meta itemprop="wordCount" content="525">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Memory Full">
   <meta name="twitter:description" content="On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.">
@@ -234,6 +234,7 @@ def check_db_size():
             print(f&#34;  File: {oldest[1]}&#34;)
 </code></pre><p>From the investigation it came that, current WAL position was <code>38E/A801DF30</code> and the oldest required position by replication slots was <code>34E/8008F00</code>. So, the oldest WAL was around 40 (hex) segments behind, i.e. 64 segments behind. Each slot occupying around 16GB, total came out around 4TB.</p>
 <p>For the context, we have CDC pipeline setup on the RDS using DMS service of AWS. For some reason an old replication had gone down, so the maintainer created another replication slot without cleaning the older one. This resulted in memory being hogged by the inactive replication slot. While we actually used a GB of memory, we were paying for TB of memory due to this cleanup issue.</p>
+<p>I was able to debug the issue with Claude in an hour. I was just thinking how many days it would have taken me to just find out WAL stats&hellip;</p>
 <ul class="pa0">
   
 </ul>
