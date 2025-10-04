@@ -133,6 +133,24 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/memory_full/" class="link black dim">
+        Memory Full
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.</p>
+    </div>
+    <a href="/tech/memory_full/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/redis-valkey/" class="link black dim">
         Redis Valkey
       </a>
@@ -295,25 +313,6 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
 <p>So, Jenkins for me is an <code>automated deployment</code> tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:</p>
     </div>
     <a href="/tech/jenkins/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/sentry/" class="link black dim">
-        Sentry - For The Black
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p><em>Where can I find the logs ?</em> was one of the initial questions that I asked while understanding our system. I came from a background where you need to see logs to find issues. I was taken aback when I heard that they don&rsquo;t capture logs. I kept wondering how they resolve issues in production.</p>
-<p>It&rsquo;s been 5+ years now working in the system and I have rarely used logs. It brings a smile to my face when some new joinee asks for logs. With Sentry catching errors has become quite easy. Enable sentry on one of the servers and if any case throws error alerts are raised immediately. Whoever sent the buggy code is responsible to fix it immediately. Sentry alert gives you all details you would ever need to fix that bug. Which API ? Which Machine ? Which line ? What error ? What were the local variables ? &hellip; Thus, we have been able to scale to millions of users without ever depending on logs. Any bug that creeps in, gets killed in nascent stage.</p>
-    </div>
-    <a href="/tech/sentry/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 

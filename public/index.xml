@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Sep 2025 10:32:51 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 04 Oct 2025 23:29:55 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Full</title>
+      <link>http://pvsukalkar.in/tech/memory_full/</link>
+      <pubDate>Sat, 04 Oct 2025 23:29:55 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/memory_full/</guid>
+      <description>&lt;p&gt;On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Redis Valkey</title>
       <link>http://pvsukalkar.in/tech/redis-valkey/</link>

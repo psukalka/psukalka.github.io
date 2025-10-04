@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-09-16T10:32:51+05:30">
-  <meta itemprop="dateModified" content="2025-09-16T10:32:51+05:30">
+  <meta itemprop="datePublished" content="2025-10-04T23:29:55+05:30">
+  <meta itemprop="dateModified" content="2025-10-04T23:29:55+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,29 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/memory_full/" class="color-inherit dim link">
+            Memory Full
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.</p>
+        </div>
+        <a href="/tech/memory_full/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/redis-valkey/" class="color-inherit dim link">
             Redis Valkey
             </a>
@@ -191,36 +214,18 @@ AWS handles all the orchestration for you. You need to provide a <code>task defi
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/ssh-vs-https/" class="color-inherit dim link">
-            SSH vs HTTPS
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Before we can ssh into a server, we need to (manually) provide our public key to the server. Server stores this key in <code>authorized_keys</code> file under <code>~/.ssh</code> directory. Similarly, when we try to ssh to a server, our laptop asks if you want to add this server to known hosts.
-If selected <code>yes</code> an entry will be made to <code>known_hosts</code> file in local system. This entry is of the server&rsquo;s public key.</p>
-        </div>
-        <a href="/tech/ssh-vs-https/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/ssh-vs-https/" class="link black dim">
+                SSH vs HTTPS
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/vpn/" class="link black dim">
@@ -237,12 +242,6 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/gunicorn/" class="link black dim">
                 Gunicorn
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/aspera/" class="link black dim">
-                Aspera
               </a>
             </h2>
           

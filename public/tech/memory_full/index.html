@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Memory Full | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/memory_full/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/memory_full/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Memory Full">
+  <meta property="og:description" content="On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-10-04T23:29:55+05:30">
+    <meta property="article:modified_time" content="2025-10-04T23:29:55+05:30">
+
+  <meta itemprop="name" content="Memory Full">
+  <meta itemprop="description" content="On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.">
+  <meta itemprop="datePublished" content="2025-10-04T23:29:55+05:30">
+  <meta itemprop="dateModified" content="2025-10-04T23:29:55+05:30">
+  <meta itemprop="wordCount" content="495">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Memory Full">
+  <meta name="twitter:description" content="On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/management/" title="Management page">
+              Management
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Memory Full</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-10-04T23:29:55+05:30">October 4, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.</p>
+<p>After few weeks, I looked into the issue yesterday. Where is 1TB memory going ? We have only around 10k users and that shouldn&rsquo;t take so much memory. I started debugging DB stats.</p>
+<pre tabindex="0"><code>from django.db import connection
+def check_db_size():
+    with connection.cursor() as cursor:
+        cursor.execute(&#34;&#34;&#34;
+            SELECT 
+                schemaname AS database,
+                ROUND(SUM(pg_total_relation_size(schemaname||&#39;.&#39;||tablename)) / 1024 / 1024 / 1024::numeric, 2) AS size_gb
+            FROM pg_tables
+            WHERE schemaname NOT IN (&#39;pg_catalog&#39;, &#39;information_schema&#39;)
+            GROUP BY schemaname
+            ORDER BY size_gb DESC
+        &#34;&#34;&#34;)
+        results = cursor.fetchall()
+        for row in results:
+            print(f&#34;Schema: {row[0]}, Size: {row[1]} GB&#34;)
+</code></pre><p>DB size seemed quite normal. It came below 1GB. That is interesting. Claude suggested to check WAL size.</p>
+<pre tabindex="0"><code>def check_wal_size():
+    with connection.cursor() as cursor:
+        cursor.execute(&#34;&#34;&#34;
+            SELECT 
+                pg_size_pretty(pg_wal_lsn_diff(pg_current_wal_lsn(), &#39;0/0&#39;)) as wal_size,
+                count(*) as wal_files 
+            FROM pg_ls_waldir()
+        &#34;&#34;&#34;)
+        result = cursor.fetchone()
+        print(f&#34;WAL Size: {result}&#34;)
+</code></pre><p>To my surprise, it showed that 258GB was being hogged by one replication slot that was inactive. That got us more into it. We dug deeper into WAL stats.</p>
+<pre tabindex="0"><code>def deep_wal_investigation_rds():
+    with connection.cursor() as cursor:
+        # Check ALL replication slots
+        cursor.execute(&#34;&#34;&#34;
+            SELECT 
+                slot_name,
+                slot_type,
+                active,
+                xmin,
+                restart_lsn,
+                pg_size_pretty(pg_wal_lsn_diff(pg_current_wal_lsn(), restart_lsn)) as retained
+            FROM pg_replication_slots
+            ORDER BY pg_wal_lsn_diff(pg_current_wal_lsn(), restart_lsn) DESC NULLS LAST
+        &#34;&#34;&#34;)
+        print(&#34;ALL REPLICATION SLOTS:&#34;)
+        for row in cursor.fetchall():
+            print(f&#34;  {row[0][:30]}... Active={row[2]}, Retained={row[5]}&#34;)
+        # Check WAL retention settings
+        cursor.execute(&#34;&#34;&#34;
+            SELECT 
+                name, 
+                setting,
+                unit
+            FROM pg_settings 
+            WHERE name IN (
+                &#39;wal_keep_segments&#39;, 
+                &#39;wal_keep_size&#39;, 
+                &#39;max_wal_size&#39;, 
+                &#39;min_wal_size&#39;,
+                &#39;checkpoint_timeout&#39;,
+                &#39;checkpoint_completion_target&#39;,
+                &#39;archive_mode&#39;,
+                &#39;archive_timeout&#39;
+            )
+            ORDER BY name
+        &#34;&#34;&#34;)
+        print(&#34;\nWAL CONFIGURATION:&#34;)
+        for row in cursor.fetchall():
+            print(f&#34;  {row[0]}: {row[1]} {row[2] if row[2] else &#39;&#39;}&#34;)
+        # Check current WAL position
+        cursor.execute(&#34;&#34;&#34;
+            SELECT 
+                pg_current_wal_lsn() as current_lsn,
+                pg_walfile_name(pg_current_wal_lsn()) as current_wal_file
+        &#34;&#34;&#34;)
+        wal_pos = cursor.fetchone()
+        print(f&#34;\nCURRENT WAL POSITION:&#34;)
+        print(f&#34;  LSN: {wal_pos[0]}&#34;)
+        print(f&#34;  File: {wal_pos[1]}&#34;)
+        # Check oldest WAL required
+        cursor.execute(&#34;&#34;&#34;
+            SELECT 
+                MIN(restart_lsn) as oldest_required_lsn,
+                pg_walfile_name(MIN(restart_lsn)) as oldest_required_file
+            FROM pg_replication_slots
+            WHERE restart_lsn IS NOT NULL
+        &#34;&#34;&#34;)
+        oldest = cursor.fetchone()
+        if oldest[0]:
+            print(f&#34;\nOLDEST WAL REQUIRED BY SLOTS:&#34;)
+            print(f&#34;  LSN: {oldest[0]}&#34;)
+            print(f&#34;  File: {oldest[1]}&#34;)
+</code></pre><p>From the investigation it came that, current WAL position was <code>38E/A801DF30</code> and the oldest required position by replication slots was <code>34E/8008F00</code>. So, the oldest WAL was around 40 (hex) segments behind, i.e. 64 segments behind. Each slot occupying around 16GB, total came out around 4TB.</p>
+<p>For the context, we have CDC pipeline setup on the RDS using DMS service of AWS. For some reason an old replication had gone down, so the maintainer created another replication slot without cleaning the older one. This resulted in memory being hogged by the inactive replication slot. While we actually used a GB of memory, we were paying for TB of memory due to this cleanup issue.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
