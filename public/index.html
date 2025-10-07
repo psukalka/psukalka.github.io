@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-10-04T23:29:55+05:30">
-  <meta itemprop="dateModified" content="2025-10-04T23:29:55+05:30">
+  <meta itemprop="datePublished" content="2025-10-07T14:15:38+05:30">
+  <meta itemprop="dateModified" content="2025-10-07T14:15:38+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,36 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/blue-green/" class="color-inherit dim link">
+            Downscaling RDS
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>So, when we found out the root cause for <a href="https://pvsukalkar.in/tech/memory_full/">memory full</a> the next step was to reduce the storage.
+After cleaning up the replication slot, WAL size had come down drastically.
+Now, 3GB storage was enough to hold current databases. But we were still paying for 2TB usage.
+So, we had to downscale RDS to reduce monthly bill.</p>
+<p>Upscaling is easier in AWS and downscaling is equally tedious.
+RDS Storage are based on EBS volume which only expand and don&rsquo;t allow shrinking.
+To upscale, it is just one click job (increase storage) but to downscale you need to create another database and switch traffic to that.
+In current setup, Blue-Green deployment provided by AWS seemed most convenient option (compared to DMS, or restore from storage).</p>
+        </div>
+        <a href="/tech/blue-green/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/memory_full/" class="color-inherit dim link">
             Memory Full
             </a>
@@ -189,37 +219,18 @@ Hence, they moved to a more restrictive licensing on March 2024. Their source co
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/ecs-pipeline/" class="color-inherit dim link">
-            ECS Pipeline
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>If you have a docker image of your service you can deploy it scalably using ECS.
-AWS handles all the orchestration for you. You need to provide a <code>task definition</code> and once deployment is run, ECS creates tasks (running containers) as per task definition. An ECS service ensures that desired number of tasks are always running.</p>
-<p>For standard services you have container images publically available. But mostly if you are using ECS, you will be trying to create your own docker image that would run some server or anything. But then how does ECS know about your docker image ?</p>
-        </div>
-        <a href="/tech/ecs-pipeline/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/ecs-pipeline/" class="link black dim">
+                ECS Pipeline
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/ssh-vs-https/" class="link black dim">
@@ -236,12 +247,6 @@ AWS handles all the orchestration for you. You need to provide a <code>task defi
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/slack/" class="link black dim">
                 Slack Integration
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/gunicorn/" class="link black dim">
-                Gunicorn
               </a>
             </h2>
           

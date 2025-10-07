@@ -133,6 +133,31 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/blue-green/" class="link black dim">
+        Downscaling RDS
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>So, when we found out the root cause for <a href="https://pvsukalkar.in/tech/memory_full/">memory full</a> the next step was to reduce the storage.
+After cleaning up the replication slot, WAL size had come down drastically.
+Now, 3GB storage was enough to hold current databases. But we were still paying for 2TB usage.
+So, we had to downscale RDS to reduce monthly bill.</p>
+<p>Upscaling is easier in AWS and downscaling is equally tedious.
+RDS Storage are based on EBS volume which only expand and don&rsquo;t allow shrinking.
+To upscale, it is just one click job (increase storage) but to downscale you need to create another database and switch traffic to that.
+In current setup, Blue-Green deployment provided by AWS seemed most convenient option (compared to DMS, or restore from storage).</p>
+    </div>
+    <a href="/tech/blue-green/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/memory_full/" class="link black dim">
         Memory Full
       </a>
@@ -294,25 +319,6 @@ If selected <code>yes</code> an entry will be made to <code>known_hosts</code> f
 <p>For starter, I can write a python script that can send n number of requests and I can make them concurrent calls using async / threads. But is there any other readily available option ? When I explored, there is an option: <code>Apache Bench (ab)</code></p>
     </div>
     <a href="/tech/apache-bench/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/jenkins/" class="link black dim">
-        Building Jenkins
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>I have used Jenkins to deploy jobs but that&rsquo;s the extent of my usage. I was going to deep-dive into Jenkins. But before that I got a thought, why not think of building Jenkins if I had to build one ? If I was to build Jenkins, how would I have done it ?</p>
-<p>So, Jenkins for me is an <code>automated deployment</code> tool. So, before automating something, how would I have done the deployment manually ? Say, I want to deploy a Django project from GitHub to production. I would follow these steps:</p>
-    </div>
-    <a href="/tech/jenkins/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 

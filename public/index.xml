@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Oct 2025 23:29:55 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 07 Oct 2025 14:15:38 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Downscaling RDS</title>
+      <link>http://pvsukalkar.in/tech/blue-green/</link>
+      <pubDate>Tue, 07 Oct 2025 14:15:38 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/blue-green/</guid>
+      <description>&lt;p&gt;So, when we found out the root cause for &lt;a href=&#34;https://pvsukalkar.in/tech/memory_full/&#34;&gt;memory full&lt;/a&gt; the next step was to reduce the storage.&#xA;After cleaning up the replication slot, WAL size had come down drastically.&#xA;Now, 3GB storage was enough to hold current databases. But we were still paying for 2TB usage.&#xA;So, we had to downscale RDS to reduce monthly bill.&lt;/p&gt;&#xA;&lt;p&gt;Upscaling is easier in AWS and downscaling is equally tedious.&#xA;RDS Storage are based on EBS volume which only expand and don&amp;rsquo;t allow shrinking.&#xA;To upscale, it is just one click job (increase storage) but to downscale you need to create another database and switch traffic to that.&#xA;In current setup, Blue-Green deployment provided by AWS seemed most convenient option (compared to DMS, or restore from storage).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Memory Full</title>
       <link>http://pvsukalkar.in/tech/memory_full/</link>
