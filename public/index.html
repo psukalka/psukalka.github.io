@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-10-07T14:15:38+05:30">
-  <meta itemprop="dateModified" content="2025-10-07T14:15:38+05:30">
+  <meta itemprop="datePublished" content="2025-10-13T23:31:34+05:30">
+  <meta itemprop="dateModified" content="2025-10-13T23:31:34+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,29 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/whos-watching/" class="color-inherit dim link">
+            Who&#39;s Watching ??
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.</p>
+        </div>
+        <a href="/tech/whos-watching/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/blue-green/" class="color-inherit dim link">
             Downscaling RDS
             </a>
@@ -194,37 +217,18 @@ In current setup, Blue-Green deployment provided by AWS seemed most convenient o
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/redis-valkey/" class="color-inherit dim link">
-            Redis Valkey
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Redis used to be open source with BSD license. Berkeley Software Distribution (BSD) license gives full permission to use the software. It is like <code>do whatever you want with this code, just don't blame us if it doesn't work</code>.</p>
-<p>Cloud providers used Redis and made lot of money over it, but nothing was shared back to Redis Ltd.
-Hence, they moved to a more restrictive licensing on March 2024. Their source code is still available but not for commercial hosting / service use. For commercial use you need to take their permission.</p>
-        </div>
-        <a href="/tech/redis-valkey/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/redis-valkey/" class="link black dim">
+                Redis Valkey
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/ecs-pipeline/" class="link black dim">
@@ -241,12 +245,6 @@ Hence, they moved to a more restrictive licensing on March 2024. Their source co
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/vpn/" class="link black dim">
                 VPN
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/slack/" class="link black dim">
-                Slack Integration
               </a>
             </h2>
           

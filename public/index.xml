@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Oct 2025 14:15:38 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 13 Oct 2025 23:31:34 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Who&#39;s Watching ??</title>
+      <link>http://pvsukalkar.in/tech/whos-watching/</link>
+      <pubDate>Mon, 13 Oct 2025 23:31:34 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/whos-watching/</guid>
+      <description>&lt;p&gt;After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Downscaling RDS</title>
       <link>http://pvsukalkar.in/tech/blue-green/</link>

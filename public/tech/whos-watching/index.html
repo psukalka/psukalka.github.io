@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Who&#39;s Watching ?? | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/whos-watching/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/whos-watching/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Who&#39;s Watching ??">
+  <meta property="og:description" content="After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-10-13T23:31:34+05:30">
+    <meta property="article:modified_time" content="2025-10-13T23:31:34+05:30">
+
+  <meta itemprop="name" content="Who&#39;s Watching ??">
+  <meta itemprop="description" content="After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.">
+  <meta itemprop="datePublished" content="2025-10-13T23:31:34+05:30">
+  <meta itemprop="dateModified" content="2025-10-13T23:31:34+05:30">
+  <meta itemprop="wordCount" content="536">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Who&#39;s Watching ??">
+  <meta name="twitter:description" content="After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/management/" title="Management page">
+              Management
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Who&#39;s Watching ??</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-10-13T23:31:34+05:30">October 13, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>After reducing the RDS size, I was eager to watch the reduction in monthly bill. Earlier, RDS was costing around $11/day and now it should have cost me $3/day. But after few days of monitoring, it did not budge below $7/day. On splitting the cost by usage type, some storage cost had increased for RDS. On inspecting, I found that this was due to the snapshots that I had created before deleting the previous RDS instance. AWS provides free storage only upto the size of RDS (200GB in my case). But the previous snapshots were of 2TB. Hence, they were beyond free storage and were costing around $4/day. On deleting these snapshots, the RDS bill had come down to the expected value of $3/day.</p>
+<p>While I was hell-bent on RDS cost, something else had started sprawling. While I was expecting the monthly bill to reduce, it had started to increase. On further inspection, Cloudwatch cost had started to rise and it was costing $80/day. So, all the efforts to reduce bill had gone in vain.</p>
+<p>First thing when inspecting cloudwatch was logs. Are we publishing too many logs ? Few devs had touched ECS pipeline around that time so I guessed ECS logging was set to debug mode and that would be costing more. But that wasn&rsquo;t the reason. In fact whole logging was costing only $1/day. Still $75/day was coming from data processing. What kind of data processing ? I don&rsquo;t know.</p>
+<p>Since the timeline of cost increased matched our migration date, it had to do something with RDS migration. We use DMS to sync production db with analytics db (CDC pipeline). When I checked its config, logging was enabled here and that&rsquo;s our culprit (is what I thought). Though logging was enabled, but it wasn&rsquo;t costing us. It was hardly pushing 1GB logs.</p>
+<p>Since it was related to data processing, it had to be something related to metrics. I checked <code>PutMetrics</code> , <code>GetMetrics</code> usage but it returned nothing. So, I listed all the metrics:</p>
+<pre tabindex="0"><code>~ $ # List ALL metrics to find custom namespaces
+~ $ aws cloudwatch list-metrics \
+&gt;   --query &#39;Metrics[].Namespace&#39; \
+&gt;   --output text | tr &#39;\t&#39; &#39;\n&#39; | sort | uniq -c | sort -rn
+  18493 Glue
+    640 AWS/Usage
+    462 AWS/EBS
+    264 AWS/EC2
+    153 AWS/RDS
+    123 ECS/ContainerInsights
+    121 AWS/DMS
+    111 AWS/NetworkELB
+     64 AWS/ApplicationELB
+     45 AWS/Logs
+     34 AWS/Firehose
+     30 AWS/PrivateLinkEndpoints
+     28 AWS/Events
+     26 AWS/Lambda
+     26 AWS/EKS
+     20 AWS/S3
+     17 AWS/Glue
+     15 AWS/NATGateway
+     15 AWS/Athena
+      8 AWS/States
+      8 AWS/Location
+      6 AWS/Rekognition
+      6 AWS/HealthLake
+      5 AWS/Bedrock/DataAutomation
+      3 AWS/KMS
+      2 AWS/ECS
+      1 AWS/SecretsManager
+</code></pre><p>As can be seen, Glue was pushing 18k+ metrics / day. And that was the culprit. So, I started digging deeper into Glue jobs. There were two Glue jobs. Claude gave me commands to disable metrics in them. But I was hesitant - whoever created these Glue jobs likely used the AWS Console, not CLI. So I went hunting in the visual interface instead. And there it was: under Job Details → Monitoring options → &ldquo;Job metrics&rdquo; was checked. I confirmed it with claude and disabled these settings. This should reduce our cloudwatch billing from today.</p>
+<p>Just a single click cost us around $80/day. So, knowing what to click is crucial.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
