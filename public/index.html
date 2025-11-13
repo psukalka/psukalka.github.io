@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2025-10-13T23:31:34+05:30">
-  <meta itemprop="dateModified" content="2025-10-13T23:31:34+05:30">
+  <meta itemprop="datePublished" content="2025-11-13T10:41:47+05:30">
+  <meta itemprop="dateModified" content="2025-11-13T10:41:47+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,38 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/google-workspace/" class="color-inherit dim link">
+            Google Workspace Setup
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>Setting up Google Workspace is different from setting up a personal Gmail account. Your domain is likely registered with a provider like GoDaddy or Namecheap, and email traffic must be routed to Google&rsquo;s servers.</p>
+<p><strong>Example scenario:</strong></p>
+<ul>
+<li>Domain <code>abc.ai</code> registered with GoDaddy</li>
+<li>Cloudflare as DNS provider (optional but recommended for easier setup)</li>
+<li>Goal: Create Google Workspace emails like <code>pavan@abc.ai</code></li>
+</ul>
+<h2 id="setup-steps">Setup Steps</h2>
+<h3 id="1-configure-dns-provider-optional---cloudflare">1. Configure DNS Provider (Optional - Cloudflare)</h3>
+<p>If using Cloudflare, update nameservers on GoDaddy domain settings to point to Cloudflare nameservers (typically <code>elias.ns.cloudflare.com</code> and <code>megan.ns.cloudflare.com</code>).</p>
+        </div>
+        <a href="/tech/google-workspace/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/whos-watching/" class="color-inherit dim link">
             Who&#39;s Watching ??
             </a>
@@ -194,35 +226,18 @@ In current setup, Blue-Green deployment provided by AWS seemed most convenient o
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/memory_full/" class="color-inherit dim link">
-            Memory Full
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>On Sunday morning, I got lot of messages that production was down. Users are not able to login. Naturally, I went to Sentry to check if any alerts were raised. And there seemed to be a connection issue with Postgres database. I went to the db dashboard and it flagged that the RDS memory had exhausted. It had 1TB memory provisioned and that was exhausted. To resolve the problem immediately I provisioned more memory to it.</p>
-        </div>
-        <a href="/tech/memory_full/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/memory_full/" class="link black dim">
+                Memory Full
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/redis-valkey/" class="link black dim">
@@ -239,12 +254,6 @@ In current setup, Blue-Green deployment provided by AWS seemed most convenient o
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/ssh-vs-https/" class="link black dim">
                 SSH vs HTTPS
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/vpn/" class="link black dim">
-                VPN
               </a>
             </h2>
           

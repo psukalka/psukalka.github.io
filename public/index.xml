@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Oct 2025 23:31:34 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 13 Nov 2025 10:41:47 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Workspace Setup</title>
+      <link>http://pvsukalkar.in/tech/google-workspace/</link>
+      <pubDate>Thu, 13 Nov 2025 10:41:47 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/google-workspace/</guid>
+      <description>&lt;p&gt;Setting up Google Workspace is different from setting up a personal Gmail account. Your domain is likely registered with a provider like GoDaddy or Namecheap, and email traffic must be routed to Google&amp;rsquo;s servers.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example scenario:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Domain &lt;code&gt;abc.ai&lt;/code&gt; registered with GoDaddy&lt;/li&gt;&#xA;&lt;li&gt;Cloudflare as DNS provider (optional but recommended for easier setup)&lt;/li&gt;&#xA;&lt;li&gt;Goal: Create Google Workspace emails like &lt;code&gt;pavan@abc.ai&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;setup-steps&#34;&gt;Setup Steps&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-configure-dns-provider-optional---cloudflare&#34;&gt;1. Configure DNS Provider (Optional - Cloudflare)&lt;/h3&gt;&#xA;&lt;p&gt;If using Cloudflare, update nameservers on GoDaddy domain settings to point to Cloudflare nameservers (typically &lt;code&gt;elias.ns.cloudflare.com&lt;/code&gt; and &lt;code&gt;megan.ns.cloudflare.com&lt;/code&gt;).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Who&#39;s Watching ??</title>
       <link>http://pvsukalkar.in/tech/whos-watching/</link>
