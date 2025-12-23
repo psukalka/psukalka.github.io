@@ -6,8 +6,15 @@
     <description>Recent content on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Nov 2025 10:41:47 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 23 Dec 2025 20:43:27 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IPO: The coffee and the froth</title>
+      <link>http://pvsukalkar.in/finance/ipo/</link>
+      <pubDate>Tue, 23 Dec 2025 20:43:27 +0530</pubDate>
+      <guid>http://pvsukalkar.in/finance/ipo/</guid>
+      <description>&lt;p&gt;What happens to your ESOPs when company goes IPO? If you have Rs. 1cr ESOPs will you be crorepati overnight?&#xA;On paper yes, but there are lots of twists and turns and patience is the key. Let&amp;rsquo;s traverse an imaginary IPO journey.&#xA;Before we proceed, there are few technical terms that we need to be aware of:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;ESOPs&lt;/strong&gt;: Employee Stock Option (notice the word option here, it is an option to buy a stock not actual stock)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Vesting date&lt;/strong&gt;: The date on which any stock option becomes exercisable&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Exercising period&lt;/strong&gt;: The time window (typically 10 years from grant date) within which you must exercise the option, or they expire&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Exercise date&lt;/strong&gt;: The date on which you exercise the option, i.e. you convert the stock option to a stock&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Exercise price&lt;/strong&gt;: The price that you pay to convert stock option to stock. It is Rs. 1 in our company&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;FMV&lt;/strong&gt;: Fair market value is the stock price as evaluated by some investment company&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Perquisite&lt;/strong&gt;: (FMV - Exercise price)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sale date&lt;/strong&gt;: The date on which you sell the stock&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Important note on holding period: Your holding period for capital gains tax starts from the EXERCISE date, not grant or vesting date. For tax purposes:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Google Workspace Setup</title>
       <link>http://pvsukalkar.in/tech/google-workspace/</link>
