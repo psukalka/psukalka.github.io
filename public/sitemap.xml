@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://pvsukalkar.in/misc/hope/</loc>
-    <lastmod>2025-12-25T01:55:11+05:30</lastmod>
-  </url><url>
     <loc>http://pvsukalkar.in/</loc>
-    <lastmod>2025-12-25T01:55:11+05:30</lastmod>
+    <lastmod>2025-12-28T01:07:56+05:30</lastmod>
   </url><url>
     <loc>http://pvsukalkar.in/misc/</loc>
+    <lastmod>2025-12-28T01:07:56+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/misc/sip-by-sip/</loc>
+    <lastmod>2025-12-28T01:07:56+05:30</lastmod>
+  </url><url>
+    <loc>http://pvsukalkar.in/misc/hope/</loc>
     <lastmod>2025-12-25T01:55:11+05:30</lastmod>
   </url><url>
     <loc>http://pvsukalkar.in/finance/home-loan-bank/</loc>
