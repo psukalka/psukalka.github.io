@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Vector Db | Diary Of An Observer</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="We know the difference between syntactic and semantic search.
+
+
+Syntactic search is keyword based.
+Searching for Backend Engineer returns results like backend engineer or back-end engineer.
+
+
+Semantic search is meaning based.
+The same query can also return platform engineer, api developer, etc.
+
+
+This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into vector embeddings — numerical representations that capture semantic meaning.">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://pvsukalkar.in/tech/vector-db/">
+    
+
+    <meta property="og:url" content="http://pvsukalkar.in/tech/vector-db/">
+  <meta property="og:site_name" content="Diary Of An Observer">
+  <meta property="og:title" content="Vector Db">
+  <meta property="og:description" content="We know the difference between syntactic and semantic search.
+Syntactic search is keyword based.
+Searching for Backend Engineer returns results like backend engineer or back-end engineer.
+Semantic search is meaning based.
+The same query can also return platform engineer, api developer, etc.
+This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into vector embeddings — numerical representations that capture semantic meaning.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2026-01-14T21:50:35+05:30">
+    <meta property="article:modified_time" content="2026-01-14T21:50:35+05:30">
+
+  <meta itemprop="name" content="Vector Db">
+  <meta itemprop="description" content="We know the difference between syntactic and semantic search.
+Syntactic search is keyword based.
+Searching for Backend Engineer returns results like backend engineer or back-end engineer.
+Semantic search is meaning based.
+The same query can also return platform engineer, api developer, etc.
+This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into vector embeddings — numerical representations that capture semantic meaning.">
+  <meta itemprop="datePublished" content="2026-01-14T21:50:35+05:30">
+  <meta itemprop="dateModified" content="2026-01-14T21:50:35+05:30">
+  <meta itemprop="wordCount" content="740">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vector Db">
+  <meta name="twitter:description" content="We know the difference between syntactic and semantic search.
+Syntactic search is keyword based.
+Searching for Backend Engineer returns results like backend engineer or back-end engineer.
+Semantic search is meaning based.
+The same query can also return platform engineer, api developer, etc.
+This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into vector embeddings — numerical representations that capture semantic meaning.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Diary Of An Observer
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/tech/" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/management/" title="Management page">
+              Management
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/finance/" title="Finance page">
+              Finance
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Vector Db</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2026-01-14T21:50:35+05:30">January 14, 2026</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>We know the difference between <strong>syntactic</strong> and <strong>semantic</strong> search.</p>
+<ul>
+<li>
+<p><strong>Syntactic search</strong> is keyword based.<br>
+Searching for <code>Backend Engineer</code> returns results like <code>backend engineer</code> or <code>back-end engineer</code>.</p>
+</li>
+<li>
+<p><strong>Semantic search</strong> is meaning based.<br>
+The same query can also return <code>platform engineer</code>, <code>api developer</code>, etc.</p>
+</li>
+</ul>
+<p>This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into <strong>vector embeddings</strong> — numerical representations that capture semantic meaning.</p>
+<hr>
+<h2 id="from-text-to-vectors">From text to vectors</h2>
+<p>To perform semantic search, every searchable object must be converted into a vector embedding.</p>
+<p>This is typically done using a machine-learning model.</p>
+<p>The simplest approach is using a hosted API, such as OpenAI:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> openai <span style="color:#f92672">import</span> OpenAI
+</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> OpenAI(api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;api-key&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>embedding <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>embeddings<span style="color:#f92672">.</span>create(
+</span></span><span style="display:flex;"><span>    model<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-embedding-3-small&#34;</span>,
+</span></span><span style="display:flex;"><span>    input<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello pavan&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>This is convenient, but it:</p>
+<ul>
+<li>Has monetary cost</li>
+<li>Adds network latency</li>
+<li>Produces relatively large embeddings (often 1536 dimensions)</li>
+</ul>
+<p>A popular local alternative is sentence-transformers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sentence_transformers <span style="color:#f92672">import</span> SentenceTransformer
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> SentenceTransformer(<span style="color:#e6db74">&#34;all-MiniLM-L6-v2&#34;</span>)
+</span></span><span style="display:flex;"><span>embedding <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>encode(
+</span></span><span style="display:flex;"><span>    [<span style="color:#e6db74">&#34;hello pavan&#34;</span>],
+</span></span><span style="display:flex;"><span>    normalize_embeddings<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>This approach is:</p>
+<ul>
+<li>Free</li>
+<li>Faster (no network calls)</li>
+<li>Produces smaller embeddings (typically 384–768 dimensions)</li>
+</ul>
+<p>Embedding dimensionality matters because it directly impacts storage and index size.</p>
+<h2 id="from-vectors-to-search">From vectors to search</h2>
+<p>Once all searchable data is represented as vectors, search becomes a nearest-neighbor problem:</p>
+<ul>
+<li>Cosine similarity</li>
+<li>Dot product</li>
+<li>Euclidean distance</li>
+</ul>
+<p>Any system that provides efficient similarity search over vectors can be considered a vector database.</p>
+<p>Examples include:</p>
+<ul>
+<li>Pinecone</li>
+<li>Qdrant</li>
+<li>Milvus</li>
+<li>Weaviate</li>
+<li>Postgres with pgvector</li>
+</ul>
+<p>When we talk about databases, the first thing comes to mind is their indexes. Relational databases use B-Trees as their indexes. Do vector databases have same B-Tree indexes ? It doesn&rsquo;t seem so. Vectors are multi-dimensional and arranging them across single dimension doesn&rsquo;t add any value. Vector DBs are indexed using other strategies.</p>
+<h2 id="indexing-in-vector-db">Indexing in vector DB</h2>
+<p>Vector databases rely on Approximate Nearest Neighbor (ANN) indexes.Common strategies include:</p>
+<ol>
+<li>HNSW (Hierarchical Navigable Small World)</li>
+</ol>
+<ul>
+<li>Graph-based, multi-layer structure</li>
+<li>Very fast</li>
+<li>High recall</li>
+<li>High memory usage</li>
+</ul>
+<ol start="2">
+<li>IVF (Inverted File Index)</li>
+</ol>
+<ul>
+<li>Vectors clustered via k-means</li>
+<li>Search is limited to relevant clusters</li>
+<li>Lower memory usage than HNSW</li>
+<li>Slightly lower recall</li>
+</ul>
+<ol start="3">
+<li>PQ (Product Quantization)</li>
+</ol>
+<ul>
+<li>Vectors are split and quantized</li>
+<li>Extremely high compression</li>
+<li>Can scale to billions of vectors</li>
+<li>Lower accuracy</li>
+</ul>
+<p>In postgres, we usually index by id (an integer) which takes few bytes (24 bytes approx). So, an index of 10M records would consume 10M x 24 = 240MB size.</p>
+<p>What about vector db ? It indexes vector embedding. A vector embedding of 1536 dimension would usually be around 3kb in size. So, indexing 10M records would take 10M x 3kB = 30GB space. That is huge in comparison with postgres. This would raise serious concerns using such db in production.</p>
+<h2 id="large-scale-alternatives-scann-and-faiss">Large-scale alternatives: ScaNN and FAISS</h2>
+<p>At large scale, companies often use ANN libraries instead of full vector databases.</p>
+<p>ScaNN (Google)</p>
+<ul>
+<li>Optimized for dot product / cosine similarity</li>
+<li>Uses tree partitioning + quantization</li>
+<li>Very memory efficient</li>
+<li>Requires offline index building</li>
+</ul>
+<p>FAISS from Meta is also a similar alternative.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> scann
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>searcher <span style="color:#f92672">=</span> scann<span style="color:#f92672">.</span>scann_ops_pybind<span style="color:#f92672">.</span>builder(
+</span></span><span style="display:flex;"><span>    video_embeddings,
+</span></span><span style="display:flex;"><span>    num_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>,
+</span></span><span style="display:flex;"><span>    distance_measure<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dot_product&#34;</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>tree(
+</span></span><span style="display:flex;"><span>    num_leaves<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>,
+</span></span><span style="display:flex;"><span>    num_leaves_to_search<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>score_ah(
+</span></span><span style="display:flex;"><span>    dimensions_per_block<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>build()
+</span></span></code></pre></div><p>Building this scann index takes minutes to hours depending on number of embeddings. Once the object is built it outputs search results in milli-seconds.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ids, scores <span style="color:#f92672">=</span> searcher<span style="color:#f92672">.</span>search(user_vec, final_num_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+</span></span></code></pre></div><p>Building index is a limiting factor as it takes time. So, for a production system you would build it periodically rather than upgrading it with each new data.</p>
+<h2 id="where-this-leaves-vector-databases">Where this leaves vector databases</h2>
+<p>Given the memory overhead and dynamic update requirements, vector databases are not a replacement for ML recommendation systems or ANN libraries like ScaNN.</p>
+<p>Their practical relevance lies elsewhere.
+Vector databases are best viewed as:</p>
+<ul>
+<li>Retrieval systems, not learning systems</li>
+<li>Recall layers, not rankers</li>
+<li>Operationally simple alternatives to custom ANN infrastructure</li>
+</ul>
+<p>They shine when:</p>
+<ul>
+<li>Data changes frequently</li>
+<li>Freshness matters</li>
+<li>Developer velocity is more important than maximum efficiency</li>
+</ul>
+<p>The scale is moderate (millions to tens of millions of vectors)</p>
+<h2 id="typical-production-architecture">Typical production architecture</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>ML models → generate embeddings
+</span></span><span style="display:flex;"><span>        ↓
+</span></span><span style="display:flex;"><span>Vector DB or ANN index → candidate retrieval
+</span></span><span style="display:flex;"><span>        ↓
+</span></span><span style="display:flex;"><span>Ranking model + business rules
+</span></span><span style="display:flex;"><span>        ↓
+</span></span><span style="display:flex;"><span>Final results
+</span></span></code></pre></div><p>Large companies often replace the vector DB layer with ScaNN or FAISS.
+Smaller teams often start with vector databases for simplicity.</p>
+<h2 id="final-takeaway">Final takeaway</h2>
+<p>Vector databases are not magic, and they are not general-purpose databases.
+They exist to solve a specific problem:</p>
+<p>Fast, flexible, operationally simple semantic retrieval over vector embeddings.</p>
+<p>They trade memory efficiency for ease of use, freshness, and integration — which, in many real production systems, is a trade-off teams are happy to make.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://pvsukalkar.in/" >
+    &copy;  Diary Of An Observer 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

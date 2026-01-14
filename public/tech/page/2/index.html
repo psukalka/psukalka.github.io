@@ -133,6 +133,25 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/gunicorn/" class="link black dim">
+        Gunicorn
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>While development, we run Django application using <code>python manage.py runserver</code>. But that is not recommended for production use. Why so ?</p>
+<p>Firstly, in development mode, lot of details are returned which expose internals of system. This is a security risk in production. Secondly, application doesn&rsquo;t auto-restart if it crashes with some error. Memory leaks in application accumulate over time eventually leading to crashing of server. Load can&rsquo;t be balanced across CPU cores. Then static files are served synchronously this would result in queuing of requests. In dev mode server runs as a single thread so it can&rsquo;t handle multiple concurrent requests thus increasing overall response time. There isn&rsquo;t connection pooling for database connections. Overall it is not a reliable setup that should be used in production.</p>
+    </div>
+    <a href="/tech/gunicorn/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/aspera/" class="link black dim">
         Aspera
       </a>
@@ -312,25 +331,6 @@ If someone is playing a movie on TV and then recording it again through high qua
 
         </div>
       
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/vector-graphics/" class="link black dim">
-        Vector Graphics
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>If you zoom in on any image on your phone, it starts breaking after 2x - 3x zoom. You can see square pixel blocks. But what happens when you zoom in on google map ? Despite how much you zoom (till you hit last block) it doesn&rsquo;t seem to break. I observed similar thing with Figma.</p>
-<p>What is the magic here ? Why doesn&rsquo;t it break ? Let&rsquo;s try to reverse engineer the problem. How would I achieve it if I want to create such google map like functionality.</p>
-    </div>
-    <a href="/tech/vector-graphics/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
     </section>
     <ul class="pagination pagination-default">
       <li class="page-item">
@@ -349,10 +349,13 @@ If someone is playing a movie on TV and then recording it again through high qua
         <a href="/tech/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
       </li>
       <li class="page-item">
+        <a href="/tech/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
         <a href="/tech/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/tech/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/tech/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul></article>
 

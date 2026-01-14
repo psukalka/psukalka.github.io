@@ -47,8 +47,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Diary Of An Observer">
-  <meta itemprop="datePublished" content="2026-01-12T00:37:13+05:30">
-  <meta itemprop="dateModified" content="2026-01-12T00:37:13+05:30">
+  <meta itemprop="datePublished" content="2026-01-14T21:50:35+05:30">
+  <meta itemprop="dateModified" content="2026-01-14T21:50:35+05:30">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Diary Of An Observer">
 
@@ -149,6 +149,40 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/tech/vector-db/" class="color-inherit dim link">
+            Vector Db
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>We know the difference between <strong>syntactic</strong> and <strong>semantic</strong> search.</p>
+<ul>
+<li>
+<p><strong>Syntactic search</strong> is keyword based.<br>
+Searching for <code>Backend Engineer</code> returns results like <code>backend engineer</code> or <code>back-end engineer</code>.</p>
+</li>
+<li>
+<p><strong>Semantic search</strong> is meaning based.<br>
+The same query can also return <code>platform engineer</code>, <code>api developer</code>, etc.</p>
+</li>
+</ul>
+<p>This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into <strong>vector embeddings</strong> — numerical representations that capture semantic meaning.</p>
+        </div>
+        <a href="/tech/vector-db/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/tech/google-workspace/" class="color-inherit dim link">
             Google Workspace Setup
             </a>
@@ -196,42 +230,18 @@
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/tech/blue-green/" class="color-inherit dim link">
-            Downscaling RDS
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>So, when we found out the root cause for <a href="https://pvsukalkar.in/tech/memory_full/">memory full</a> the next step was to reduce the storage.
-After cleaning up the replication slot, WAL size had come down drastically.
-Now, 3GB storage was enough to hold current databases. But we were still paying for 2TB usage.
-So, we had to downscale RDS to reduce monthly bill.</p>
-<p>Upscaling is easier in AWS and downscaling is equally tedious.
-RDS Storage are based on EBS volume which only expand and don&rsquo;t allow shrinking.
-To upscale, it is just one click job (increase storage) but to downscale you need to create another database and switch traffic to that.
-In current setup, Blue-Green deployment provided by AWS seemed most convenient option (compared to DMS, or restore from storage).</p>
-        </div>
-        <a href="/tech/blue-green/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/tech/blue-green/" class="link black dim">
+                Downscaling RDS
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/memory_full/" class="link black dim">
@@ -248,12 +258,6 @@ In current setup, Blue-Green deployment provided by AWS seemed most convenient o
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/tech/ecs-pipeline/" class="link black dim">
                 ECS Pipeline
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/tech/ssh-vs-https/" class="link black dim">
-                SSH vs HTTPS
               </a>
             </h2>
           

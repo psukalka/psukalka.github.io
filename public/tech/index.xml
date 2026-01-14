@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Nov 2025 10:41:47 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 21:50:35 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector Db</title>
+      <link>http://pvsukalkar.in/tech/vector-db/</link>
+      <pubDate>Wed, 14 Jan 2026 21:50:35 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/vector-db/</guid>
+      <description>&lt;p&gt;We know the difference between &lt;strong&gt;syntactic&lt;/strong&gt; and &lt;strong&gt;semantic&lt;/strong&gt; search.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntactic search&lt;/strong&gt; is keyword based.&lt;br&gt;&#xA;Searching for &lt;code&gt;Backend Engineer&lt;/code&gt; returns results like &lt;code&gt;backend engineer&lt;/code&gt; or &lt;code&gt;back-end engineer&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Semantic search&lt;/strong&gt; is meaning based.&lt;br&gt;&#xA;The same query can also return &lt;code&gt;platform engineer&lt;/code&gt;, &lt;code&gt;api developer&lt;/code&gt;, etc.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This difference exists because semantic search does not operate on raw text. Instead, both queries and documents are converted into &lt;strong&gt;vector embeddings&lt;/strong&gt; — numerical representations that capture semantic meaning.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Google Workspace Setup</title>
       <link>http://pvsukalkar.in/tech/google-workspace/</link>
