@@ -1,7 +1,7 @@
 +++
 date = '2026-01-14T21:50:35+05:30'
 draft = false
-title = 'Vector Db'
+title = 'Analyzing Vector Db'
 +++
 We know the difference between **syntactic** and **semantic** search.
 
