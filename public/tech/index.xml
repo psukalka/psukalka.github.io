@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Diary Of An Observer</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jan 2026 21:50:35 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 14:50:41 +0530</lastBuildDate>
     <atom:link href="http://pvsukalkar.in/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digital Signature</title>
+      <link>http://pvsukalkar.in/tech/digital-signature/</link>
+      <pubDate>Thu, 12 Mar 2026 14:50:41 +0530</pubDate>
+      <guid>http://pvsukalkar.in/tech/digital-signature/</guid>
+      <description>&lt;p&gt;If I have a digitally signed document, how do I verify if it is really signed ? How can I ensure that it is more than just a green tick photoshop ?&lt;/p&gt;&#xA;&lt;p&gt;What if the amount of Rs. 10000 in document is tampered and made Rs. 100000 after I signed it ?&#xA;What exactly happens when we digitally sign a document ? How secure is this system ?&lt;/p&gt;&#xA;&lt;p&gt;Say I want to sign a document then two keys will be created.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Analyzing Vector Db</title>
       <link>http://pvsukalkar.in/tech/vector-db/</link>
