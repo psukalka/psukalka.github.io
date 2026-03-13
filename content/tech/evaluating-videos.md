@@ -1,0 +1,150 @@
++++
+date = '2026-03-13T10:58:03+05:30'
+draft = false
+title = 'Evaluating Videos'
++++
+Suppose you had a raw video in very good quality (at 20Mbps bitrate). 
+Obviously, you can't stream this video to end-user where network bandwidth and speed is limited. 
+So, you transcode this video at various bitrates 2Mbps, 1Mbps, ... 
+
+Compared to original video, quality of this transcoded video will be less. We can see it with naked eye. 
+At around 2-3Mbps, we won't notice any difference but as bitrate starts going below 1Mbps, the difference is significantly noticeable.
+
+But even at 2-3Mbps how do we know quantitavely know that this is acceptable quality ? 
+Say at 2Mbps and 3Mbps we are not able to differentiate quality with naked eye, then it would be better to transcode at 2Mbps as it would save our streaming cost. 
+
+Subjectively identifying the video quality is not an answer. Some person would like the 2Mbps quality while other with better eyesight may find it little blurry.
+Different persons will have different opinions on the quality of same video. So, we need some way to objectively quantify the quality.
+
+One way is using PSNR (Peak signal noise ratio). It measures how much noise / distortion was introduced into a signal compared to the original video for each pixel.
+```
+Step 1: MSE calculation
+
+Original pixel value:  142
+Encoded pixel value:   138
+Difference:            4
+Squared:               16
+
+MSE = (1/N) × Σ (original_pixel - encoded_pixel)²
+
+Step 2: PSNR calculation 
+
+PSNR = 10 × log10(MAX² / MSE)
+
+where MAX = 255 (max pixel value for 8-bit video)
+```
+
+If PSNR is high it is a good quality video. Typically PSNR > 40dB is an excellent video and PSNR < 20dB is severely distorted. 
+
+You can compute it using ffmpeg as follows:
+```
+ffmpeg -i distorted.mp4 -i reference.mp4 \
+  -lavfi "[0:v][1:v]psnr=stats_file=psnr.log" \
+  -f null -
+```
+
+The problem with PSNR is that it gives equal weightage to each pixel. It won't know that this pixel is of face and this pixel is background. 
+So, for a video of man with sky in the background PSNR values will be similar if in one variation face is distorted and in another variation sky is distorted. 
+But a human eye will not like video where face is distorted while background is distorted is not noticeable. 
+
+---
+
+So, rather than assigning same weightage to each pixel if we assign weightage to overall luminance, contrast and sharpness of the video 
+we get another metric called SSIM (Structural Similarity Index). It is calculated as below:
+
+```
+Step 1: Luminance comparison
+
+l(x,y) = (2μₓμᵧ + C1) / (μₓ² + μᵧ² + C1)
+
+μₓ = mean pixel value of window in original
+μᵧ = mean pixel value of window in encoded
+
+---
+Step 2: Contrast comparison 
+
+c(x,y) = (2σₓσᵧ + C2) / (σₓ² + σᵧ² + C2)
+
+σₓ = standard deviation of window in original
+σᵧ = standard deviation of window in encoded
+
+---
+Step 3: Structure Comparison 
+
+s(x,y) = (σₓᵧ + C3) / (σₓσᵧ + C3)
+
+σₓᵧ = cross-correlation between original and encoded windows
+---
+Final SSIM per window : 
+SSIM(x,y) = l(x,y) × c(x,y) × s(x,y)
+```
+
+SSIM score varies between 0 and 1 where anything above 0.98 means excellent and noticeable degradation starts below 0.80.
+
+Suppose you blurred original video then PSNR heavily penalizes that video while SSIM slightly penalizes it (like a human would).
+So, SSIM score is more similar to human perception than PSNR. You can calculate SSIM using ffmpeg as follows:
+
+```
+ffmpeg -i distorted.mp4 -i reference.mp4 \
+  -lavfi "[0:v][1:v]ssim=stats_file=ssim.log" \
+  -f null -
+```
+
+Since SSIM gives heavy weightage to structure even if video is shifted by 1px the SSIM score will tank down drastically.
+But human eye wouldn't even perceive the 1px shift in video. Scaled videos will also have similar issue. 
+
+MS-SSIM (MultiScale SSIM) is a better version of SSIM which runs SSIM at multiple resolutions of image. 
+
+---
+
+To solve these, Netflix came up with VMAF (Video Multi-Method Assessment Fusion). 
+It is a machine learning model trained to how a human would visually rate quality of that video. It extracts features from the video as a human would and then rates them using SVR model. 
+The three core features are: 
+
+Feature 1: VIF (Visual Information Fidelity)
+How much of visual information from the reference is still present in distorted video ? 
+It models the Human visual system (HVS) as information channel: 
+
+```
+Reference ──→ [Natural scene statistics model]
+                        ↓
+              How much info reaches the brain?
+
+Distorted ──→ [Same model + distortion noise]
+                        ↓
+              How much info reaches the brain now?
+
+VIF = ratio of information retained
+```
+
+Feature 2: DLM (Detail Loss Metric) checks whether any details like edges / texture are blurred out or any extra noise is added during transcoding.
+It works by decomposing frames using wavelet transforms - separating images into frequency bands and separately analyzing each. 
+
+```
+Frame
+  ↓
+Wavelet decomposition
+  ↓
+Low frequency  → coarse structure  → checked for detail loss
+Mid frequency  → edges             → checked for both
+High frequency → fine texture      → checked for added artifacts
+```
+
+Feature 3: Motion (temporal) measures how motion is in the video. This acts as a context feature for the model. 
+Ex. if some noise is added into a static scene video it is very noticeable but same thing won't be noticeable in a fast action scene. 
+So the model gets lenient if there is high motion and is stricter if there is low motion. 
+
+All these features are passed through SVR model and a final score is generated between 0-100. A score of >93 means two videos are visually indistinguishable. 
+Score of <60 means there is severe distortion. 
+
+You can get vmaf score using ffmpeg as follows: 
+```
+ffmpeg -i distorted.mp4 -i reference.mp4 \
+  -lavfi "[0:v][1:v]libvmaf=log_fmt=json:log_path=vmaf.json" \
+  -f null -
+```
+
+Though VMAF is much closer to human perception it is not perfect. If there is any video which is not similar to Netflix's trained library VMAF score can be very off for it. 
+Always scale to match scores before scoring with vmaf.
+
+So, it is better to have all three scores handy and if for any video any score deviates from other two it is worth visiting manually.
