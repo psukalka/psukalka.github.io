@@ -129,6 +129,6 @@ India's known thorium reserves (~300,000 tonnes) could power the country at curr
 
 ## India's Achievement
 
-India has achieved **criticality in Stage 2** — meaning the Fast Breeder Reactor (PFBR) at Kalpakkam reached a self-sustaining chain reaction in 2024. We are among a **very small group of nations** to successfully build and operate an FBR, and arguably the **first developing nation** to do so. Several other nations that attempted FBRs abandoned them due to the enormous engineering complexity of sodium cooling.
+India has achieved **criticality in Stage 2** — meaning the Fast Breeder Reactor (PFBR) at Kalpakkam reached a self-sustaining chain reaction in April 2026. We are among a **very small group of nations** to successfully build and operate an FBR, and arguably the **first developing nation** to do so. Several other nations that attempted FBRs abandoned them due to the enormous engineering complexity of sodium cooling.
 
 Given India's abundance of thorium, when Stage 3 comes online — decades from now — India will be **self-sustainable in nuclear energy for centuries**. This is the strategic vision Bhabha laid out in the 1950s, and India is steadily climbing the ladder he designed.
