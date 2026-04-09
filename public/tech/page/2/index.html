@@ -133,6 +133,25 @@
   <div class="mb3 pa4 gray overflow-hidden bg-white">
     <span class="f6 db">Tech</span>
     <h1 class="f3 near-black">
+      <a href="/tech/ssh-vs-https/" class="link black dim">
+        SSH vs HTTPS
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Before we can ssh into a server, we need to (manually) provide our public key to the server. Server stores this key in <code>authorized_keys</code> file under <code>~/.ssh</code> directory. Similarly, when we try to ssh to a server, our laptop asks if you want to add this server to known hosts.
+If selected <code>yes</code> an entry will be made to <code>known_hosts</code> file in local system. This entry is of the server&rsquo;s public key.</p>
+    </div>
+    <a href="/tech/ssh-vs-https/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
       <a href="/tech/vpn/" class="link black dim">
         VPN
       </a>
@@ -302,25 +321,6 @@
 <p>Synchronous code execution is very predictable and linear. If you make some network call, it will relax there till the data comes. On the contrary, asynchronous code is quite busy. The poor guy keeps on running in (event) loop juggling multiple tasks concurrently. If it makes any network call it will register an event for that and pause execution there. Meanwhile it (eventloop) will pick and process some other event which is ready.</p>
     </div>
     <a href="/tech/the-conundrum/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
-  <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Tech</span>
-    <h1 class="f3 near-black">
-      <a href="/tech/understanding-video/" class="link black dim">
-        Understanding Video
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>Say, I have a <code>video.mp4</code> file on my system. What exactly does it contain ? The outermost layer is called <code>Container</code>. There are various type of containers <code>mp4</code>, <code>mkv</code>, <code>mov</code>, <code>flv</code>, &hellip; Container contains metadata about the file like its title, duration, creation date, &hellip; Then it contains streams of data. They can be video streams, audio streams, subtitle streams, &hellip; This is pictorially explained in following image:</p>
-<p><img src="/images/video-container.svg" alt="Video Container"></p>
-    </div>
-    <a href="/tech/understanding-video/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 
